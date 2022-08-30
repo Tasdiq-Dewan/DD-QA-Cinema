@@ -4,6 +4,10 @@ import './App.css';
 function App() {
   return (
     <>
+    {/* nav
+    search
+    router
+    footer */}
     </>
   );
 }
