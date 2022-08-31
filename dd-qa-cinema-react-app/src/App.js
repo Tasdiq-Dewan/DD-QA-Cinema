@@ -21,7 +21,7 @@ function App() {
 ======= */}
     
     <Router>
-      <GettingThere/><Contact />
+      <GettingThere/>
     </Router>
  
 
