@@ -2,8 +2,8 @@ import React from 'react'
 import { GoogleMap, useJsApiLoader, MarkerF } from '@react-google-maps/api';
 
 const containerStyle = {
-  width: '50%',
-  height: '400px'
+  width: '25%',
+  height: '400px', 
 };
 
 const center = {
@@ -18,13 +18,13 @@ function GettingThere() {
     googleMapsApiKey: "AIzaSyBUodBtyw5yAUwjFxQLsaMaxYa_tIqAg-U"
   })
 
-  const [map, setMap] = React.useState(null)
+  const [setMap] = React.useState(null)
 
-  const onLoad = React.useCallback(function callback(map) {
-    const bounds = new window.google.maps.LatLngBounds(center);
-    map.fitBounds(bounds);
-    setMap(map)
-  }, [])
+//   const onLoad = React.useCallback(function callback(map) {
+//     const bounds = new window.google.maps.LatLngBounds(center);
+//     map.fitBounds(bounds);
+//     setMap(map)
+//   }, [])
 
   const onUnmount = React.useCallback(function callback(map) {
     setMap(null)
@@ -40,7 +40,7 @@ function GettingThere() {
         MarkerF position={center}
         
       >
-        <MarkerF position={{ lat: 51.5076, lng: -0.0737 }} />}
+        <MarkerF position={{ lat: 51.5076, lng: -0.0737 }} />
         <></>
       </GoogleMap>
   ) : <></>
