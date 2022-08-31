@@ -11,12 +11,16 @@ function Contact(){
         body: ""
     })
 
+    const handleSubmitForm = (e) => {
+        e.preventDefault()
+    }
+
     return(
         
         <>
 
           <h2>Contact Us</h2>
-           <form>
+           <form onSubmit={handleSubmitForm}>
               <label htmlFor="firstName">FirstName</label>
               <input onChange={(e) => setData({...contactData, firstName: e.target.value})} value={contactData.firstName} type="text" name="firstName" id="firstName" />
 
