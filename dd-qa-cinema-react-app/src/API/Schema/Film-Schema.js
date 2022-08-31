@@ -8,8 +8,7 @@ const filmSchema = new FilmSchema({
     Classification : String
 });
 
-const filmModel = mongoose.model("Films", filmSchema);
 
-module.exports = filmModel;
+module.export = filmSchema;
 
 

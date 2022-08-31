@@ -1,12 +1,12 @@
-
 const connect = require("express");
 
 const bodyParser = require('body-parser');
 
 const app = connect();
 
-const api = require("./FilmAPI.js");
-app.use("/api", bodyParser.json(), api);
+const FilmAPI = require("./FilmAPI.js");
+const screeningAPI = require("./ScreeningAPI.js");
+app.use("/api", bodyParser.json(), screeningAPI, FilmAPI);
 const server = app.listen(8008, () =>{
     console.log("Connected");
 });
