@@ -1,3 +1,5 @@
+import logo from './images/Tower_Bridge.jpg';
+import logo2 from './images/Tower_Castle.jpg';
 import React from 'react'
 import { GoogleMap, useJsApiLoader, MarkerF } from '@react-google-maps/api';
 
@@ -43,9 +45,9 @@ function GettingThere() {
           <MarkerF position={{ lat: 51.50755272669707, lng: -0.0737967374354214 }} />
           <></>
       </GoogleMap><h1>Where we are located</h1><p>We are based right next to the Tower Bridge allowing you multiple options to travel to us. </p>
-      <p>You can travel via the underground, public transport as well as driving in. Once you have visited us, you can visit multiple tourist sites like the Tower Bridge, London Eye and Tower of London. </p>
+      <p>You can travel via the underground, public transport as well as driving in. Once you have visited us, you can visit multiple tourist sites like the Tower Bridge, London Eye and Tower of London. </p> <img src={logo2}/>
       <h2>QA LONDON INTERNATIONAL HOUSE CENTRE</h2><h2> 1st Floor International House 1 St Katharines Way London E1W 1UN Tel: 0345 074 7829 Fax: 0345 074 7830</h2><h3>Parking</h3><p>There's no onsite parking, however people can park at Minories Car Park</p>
-      <h3>Tube/Train</h3><p>Fenchurch Street (5 minute walk), London Bridge (15 minute walk), Liverpool Street (15 minute walk)</p></>
+      <h3>Tube/Train</h3><p>Fenchurch Street (5 minute walk), London Bridge (15 minute walk), Liverpool Street (15 minute walk)</p><img src={logo}/></>
   ) : <></>
 }
 
