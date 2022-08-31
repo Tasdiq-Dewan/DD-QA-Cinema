@@ -13,6 +13,7 @@ function Contact(){
 
     const handleSubmitForm = (e) => {
         e.preventDefault();
+        console.log(e);
     }
 
     return(
@@ -29,7 +30,7 @@ function Contact(){
 
           }}>Contact Us</h2>
 
-           <form onSubmit={handleSubmitForm}>
+           <form action="mailto:paulwchabz28@gmail.com" >
               <label htmlFor="firstName">FirstName</label>
               <input onChange={(e) => setData({...contactData, firstName: e.target.value})} value={contactData.firstName} type="text" name="firstName" id="firstName" />
 
@@ -42,7 +43,7 @@ function Contact(){
               <label htmlFor="body">More Information</label>
               <textarea onChange={(e) => setData({...contactData, body: e.target.value})} value={contactData.body} type="text" name="body" id="body" />
 
-              <button>Submit</button>
+              <button onSubmit={handleSubmitForm}>Submit</button>
            </form>
           
 
