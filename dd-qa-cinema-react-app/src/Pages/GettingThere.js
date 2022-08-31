@@ -31,18 +31,18 @@ function GettingThere() {
   }, [])
 
   return isLoaded ? (
-      <GoogleMap
-        mapContainerStyle={containerStyle}
-        center={center}
-        zoom={17}
-        //onLoad={onLoad}
-        onUnmount={onUnmount}
-        MarkerF position={center}
-        
+      <><GoogleMap
+          mapContainerStyle={containerStyle}
+          center={center}
+          zoom={17}
+          //onLoad={onLoad}
+          onUnmount={onUnmount}
+          MarkerF position={center}
+
       >
-        <MarkerF position={{ lat: 51.5076, lng: -0.0737 }} />
-        <></>
-      </GoogleMap>
+          <MarkerF position={{ lat: 51.5076, lng: -0.0737 }} />
+          <></>
+      </GoogleMap><h1>Hola</h1></>
   ) : <></>
 }
 

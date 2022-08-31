@@ -17,13 +17,13 @@ function App() {
     router
     
     footer */}
-    <Contact />
-=======
-    search*/
+    {/* <Contact />
+======= */}
+    
     <Router>
-      <GettingThere/>
+      <GettingThere/><Contact />
     </Router>
-    /*footer */
+ 
 
     </>
   );
