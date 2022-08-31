@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import "./Contact.css";
 
 
 function Contact(){
@@ -12,14 +12,23 @@ function Contact(){
     })
 
     const handleSubmitForm = (e) => {
-        e.preventDefault()
+        e.preventDefault();
     }
 
     return(
         
         <>
 
-          <h2>Contact Us</h2>
+          <h2 style={{
+               fontSize: "30px",
+               paddingBottom: "0px",
+               marginTop: "80px",
+               textAlign: "center",
+               fontFamily: "monospace"
+               
+
+          }}>Contact Us</h2>
+
            <form onSubmit={handleSubmitForm}>
               <label htmlFor="firstName">FirstName</label>
               <input onChange={(e) => setData({...contactData, firstName: e.target.value})} value={contactData.firstName} type="text" name="firstName" id="firstName" />
