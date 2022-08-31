@@ -32,16 +32,16 @@ function Contact(){
 
            <form action="mailto:paulwchabz28@gmail.com" >
               <label htmlFor="firstName">FirstName</label>
-              <input onChange={(e) => setData({...contactData, firstName: e.target.value})} value={contactData.firstName} type="text" name="firstName" id="firstName" />
+              <input onChange={(e) => setData({...contactData, firstName: e.target.value})} value={contactData.firstName} type="text" required name="firstName" id="firstName" />
 
               <label htmlFor="lastName">LastName</label>
-              <input onChange={(e) => setData({...contactData, lastName: e.target.value})} value={contactData.lastName} type="text" name="lastName" id="lastName" />
+              <input onChange={(e) => setData({...contactData, lastName: e.target.value})} value={contactData.lastName} type="text" required name="lastName" id="lastName" />
 
               <label htmlFor="email">Email</label>
-              <input onChange={(e) => setData({...contactData, email: e.target.value})} value={contactData.email} type="text" name="email" id="email" />
+              <input onChange={(e) => setData({...contactData, email: e.target.value})} value={contactData.email} type="email" required name="email" id="email" />
 
               <label htmlFor="body">More Information</label>
-              <textarea onChange={(e) => setData({...contactData, body: e.target.value})} value={contactData.body} type="text" name="body" id="body" />
+              <textarea onChange={(e) => setData({...contactData, body: e.target.value})} value={contactData.body} type="text" required name="body" id="body" />
 
               <button onSubmit={handleSubmitForm}>Submit</button>
            </form>
