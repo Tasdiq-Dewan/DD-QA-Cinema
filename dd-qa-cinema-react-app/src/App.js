@@ -1,5 +1,5 @@
-import logo from './logo.svg';
-import './App.css';
+
+import Contact from "./Pages/Contact";
 
 function App() {
   return (
@@ -7,7 +7,9 @@ function App() {
     {/* nav
     search
     router
+    
     footer */}
+    <Contact />
     </>
   );
 }
