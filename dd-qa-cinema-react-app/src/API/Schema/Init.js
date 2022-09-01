@@ -1,6 +1,8 @@
 const {FilmSchema} = require("./Film-Schema");
 const {ScreeningSchema} = require("./Screening-Schema");
 const {BookingSchema} = require("./Bookings-Schema");
+const {DiscussionSchema} = require("./Discussions-Schema.js");
+
 const mongoose = require("mongoose");
 const { json } = require("express");
 mongoose.connect("mongodb://localhost:27017/mongo").then(res=>{
@@ -170,3 +172,26 @@ const newBooking = new BookingModel({
 
 newBooking.save().then(() => console.log("Saved booking: ", newBooking));
 
+
+
+const discussionModel = mongoose.model("Discussions", DiscussionSchema);
+
+
+
+const newPost1 = new discussionModel(
+{
+    Post_id:1,
+    Username:"Dzza",
+    PostTitle:"I am Legend Review",
+    PostMessage:"Dog dies, init"
+});
+newPost1.save().then(() => console.log("Saved Post: ", newPost1));
+
+const newPost2 = new discussionModel(
+    {
+        Post_id:2,
+        Username:"TheVikingCoder",
+        PostTitle:"I am fake",
+        PostMessage:"Daniyal is real, I am fake, I am sorry for being fake, thank you babes"
+    });
+    newPost2.save().then(() => console.log("Saved Post: ", newPost2));
