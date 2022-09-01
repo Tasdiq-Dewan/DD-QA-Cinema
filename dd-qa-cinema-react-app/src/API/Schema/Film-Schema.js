@@ -10,6 +10,8 @@ const filmSchema = new FilmSchema({
     Genres: [{type: String, required: true, min: 1}]
 });
 
+filmSchema.index({Title: "text", Genres: "text", Synopsis: "text", Classification: "text"});
+
 const FilmModel = mongoose.model("Films", filmSchema);
 
 module.export = {FilmModel: FilmModel, FilmSchema: filmSchema};

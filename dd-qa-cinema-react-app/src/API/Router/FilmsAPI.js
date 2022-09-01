@@ -20,6 +20,33 @@ router.get("/getAllFilms", (req, res) =>{
     });
 });
 
+router.get("/getById/:id", (req, res) =>{
+    FilmModel.find({Film_id: req.params.id}).select('-_id -__v').then((result) =>{
+        res.send(JSON.stringify(result));
+        console.log(JSON.stringify(result));
+    }).catch(err =>{
+        console.log(err)
+    });
+});
+
+router.get("/searchFilm/:title", (req, res) =>{
+    FilmModel.findOne({Title: req.params.title}).select('-_id -__v').then((result) =>{
+        res.send(JSON.stringify(result));
+        console.log(JSON.stringify(result));
+    }).catch(err =>{
+        console.log(err)
+    });
+});
+
+router.get("/searchByTerm/:term", (req, res) =>{
+    FilmModel.find({$text :{$search: req.params.term}}).select('-_id -__v').then((result) =>{
+        res.send(JSON.stringify(result));
+        console.log(JSON.stringify(result));
+    }).catch(err =>{
+        console.log(err)
+    });
+});
+
 
 router.post("/AddFilm", (req, res) =>{
     FilmModel.create(req.body).then((result) =>{

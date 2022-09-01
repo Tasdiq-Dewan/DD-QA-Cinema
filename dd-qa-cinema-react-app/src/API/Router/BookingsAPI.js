@@ -2,7 +2,7 @@ const router = require("express").Router();
 const {BookingSchema} = require("../Schema/Bookings-Schema.js");
 const mongoose = require("mongoose");
 mongoose.connect("mongodb://localhost:27017/mongo").then(res=>{
-    console.log("connected FilmAPI");
+    console.log("connected BookingsAPI");
 }).catch(err => {
     console.log(errMessage);
     console.log(err);

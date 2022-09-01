@@ -19,7 +19,7 @@ const newFilm1 = new FilmModel({
     Runtime: 200,
     Synopsis: "Batman film init",
     Classification: "15",
-    Genres: ["Superhero", "Comic Book"]
+    Genres: ["Superhero", "Comic Book", "Crime"]
 });
 
 newFilm1.save().then(() => console.log("Saved film: ", newFilm1));
@@ -41,7 +41,7 @@ const newFilm3 = new FilmModel({
     Runtime: 100,
     Synopsis: "Super Saiyans fighting, init",
     Classification: "PG",
-    Genres: ["Anime", "Shonen", "Anime"]
+    Genres: ["Anime", "Shonen", "Action"]
 });
 
 newFilm3.save().then(() => console.log("Saved film: ", newFilm3));
@@ -56,6 +56,17 @@ const newFilm4 = new FilmModel({
 });
 
 newFilm4.save().then(() => console.log("Saved film: ", newFilm4));
+
+const newFilm5 = new FilmModel({
+    Film_id: 5,
+    Title: "The Dark Knight",
+    Runtime: 152,
+    Synopsis: "Why so serious, init",
+    Classification: "12",
+    Genres: ["Superhero", "Action", "Comic Book", "Crime", "Clown"]
+});
+
+newFilm5.save().then(() => console.log("Saved film: ", newFilm5));
 
 const ScreeningModel = mongoose.model("Screenings", ScreeningSchema);
 
@@ -72,7 +83,7 @@ const newScreening1 = new ScreeningModel({
         Runtime: 100,
         Synopsis: 'Super Saiyans fighting, init',
         Classification: 'PG',
-        Genres: [ 'Anime', 'Shonen', 'Anime' ]
+        Genres: [ 'Anime', 'Shonen', 'Action' ]
       }
 });
 
@@ -91,7 +102,7 @@ const newScreening2 = new ScreeningModel({
         Runtime: 100,
         Synopsis: 'Super Saiyans fighting, init',
         Classification: 'PG',
-        Genres: [ 'Anime', 'Shonen', 'Anime' ]
+        Genres: [ 'Anime', 'Shonen', 'Action' ]
       }
 });
 
@@ -110,7 +121,7 @@ const newScreening3 = new ScreeningModel({
         Runtime: 200,
         Synopsis: "Batman film init",
         Classification: "15",
-        Genres: ["Superhero", "Comic Book"]
+        Genres: ["Superhero", "Comic Book", "Crime"]
       }
 });
 
@@ -129,7 +140,7 @@ const newScreening4 = new ScreeningModel({
         Runtime: 200,
         Synopsis: "Batman film init",
         Classification: "15",
-        Genres: ["Superhero", "Comic Book"]
+        Genres: ["Superhero", "Comic Book", "Crime"]
       }
 });
 
