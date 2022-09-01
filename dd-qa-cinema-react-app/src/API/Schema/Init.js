@@ -5,6 +5,7 @@ const {DiscussionSchema} = require("./Discussions-Schema.js");
 
 const mongoose = require("mongoose");
 const { json } = require("express");
+
 mongoose.connect("mongodb://localhost:27017/mongo").then(res=>{
     console.log("connected FilmAPI");
 }).catch(err => {
@@ -13,15 +14,26 @@ mongoose.connect("mongodb://localhost:27017/mongo").then(res=>{
 });
 
 
+
 const FilmModel = mongoose.model("Films", FilmSchema);
 
+// FilmModel.collection.drop().then(result => {console.log(result)})
+// .catch(err => {
+//     console.log(err);
+// });
+FilmModel.deleteMany({}).then(result =>{
+    console.log(result);
+}).catch(err =>{
+    console.log(err);
+});
 const newFilm1 = new FilmModel({
     Film_id: 1,
     Title: "The Batman",
     Runtime: 200,
     Synopsis: "Batman film init",
     Classification: "15",
-    Genres: ["Superhero", "Comic Book", "Crime"]
+    Genres: ["Superhero", "Comic Book", "Crime"],
+    Poster: "https://cdn.europosters.eu/image/750webp/122127.webp"
 });
 
 newFilm1.save().then(() => console.log("Saved film: ", newFilm1));
@@ -32,7 +44,8 @@ const newFilm2 = new FilmModel({
     Runtime: 135,
     Synopsis: "Alien in the clouds, init",
     Classification: "15",
-    Genres: ["Horror", "Sci-Fi"]
+    Genres: ["Horror", "Sci-Fi"],
+    Poster: "https://hollywoodlife.com/wp-content/uploads/2022/06/Nope-Everything-To-Know-embed-1.jpg"
 });
 
 newFilm2.save().then(() => console.log("Saved film: ", newFilm2));
@@ -43,7 +56,8 @@ const newFilm3 = new FilmModel({
     Runtime: 100,
     Synopsis: "Super Saiyans fighting, init",
     Classification: "PG",
-    Genres: ["Anime", "Shonen", "Action"]
+    Genres: ["Anime", "Shonen", "Action"],
+    Poster: "https://m.media-amazon.com/images/M/MV5BMjhhMDU5Y2QtMzcyZS00ZGE1LTg3ZjMtMTYyOTM0OTFlYTRkXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg"
 });
 
 newFilm3.save().then(() => console.log("Saved film: ", newFilm3));
@@ -54,7 +68,8 @@ const newFilm4 = new FilmModel({
     Runtime: 101,
     Synopsis: "Dog dies, init",
     Classification: "15",
-    Genres: ["Post-apocalypse", "Action", "Thriller"]
+    Genres: ["Post-apocalypse", "Action", "Thriller"],
+    Poster: "https://images-na.ssl-images-amazon.com/images/I/A19WwNrox0L._RI_.jpg"
 });
 
 newFilm4.save().then(() => console.log("Saved film: ", newFilm4));
@@ -65,12 +80,24 @@ const newFilm5 = new FilmModel({
     Runtime: 152,
     Synopsis: "Why so serious Batman, init",
     Classification: "12",
-    Genres: ["Superhero", "Action", "Comic Book", "Crime", "Clown"]
+    Genres: ["Superhero", "Action", "Comic Book", "Crime", "Clown"],
+    Poster: "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_.jpg"
 });
 
 newFilm5.save().then(() => console.log("Saved film: ", newFilm5));
 
 const ScreeningModel = mongoose.model("Screenings", ScreeningSchema);
+ScreeningModel.deleteMany({}).then(result =>{
+    console.log(result);
+}).catch(err =>{
+    console.log(err);
+});
+
+// ScreeningModel.collection.drop().then(result => {console.log(result)})
+// .catch(err => {
+//     console.log(err);
+// });
+
 
 const newScreening1 = new ScreeningModel({
     Screening_id: 1,
@@ -84,7 +111,8 @@ const newScreening1 = new ScreeningModel({
         Runtime: 100,
         Synopsis: 'Super Saiyans fighting, init',
         Classification: 'PG',
-        Genres: [ 'Anime', 'Shonen', 'Action' ]
+        Genres: [ 'Anime', 'Shonen', 'Action' ],
+        Poster: "https://m.media-amazon.com/images/M/MV5BMjhhMDU5Y2QtMzcyZS00ZGE1LTg3ZjMtMTYyOTM0OTFlYTRkXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg"
       }
 });
 
@@ -102,7 +130,8 @@ const newScreening2 = new ScreeningModel({
         Runtime: 100,
         Synopsis: 'Super Saiyans fighting, init',
         Classification: 'PG',
-        Genres: [ 'Anime', 'Shonen', 'Action' ]
+        Genres: [ 'Anime', 'Shonen', 'Action' ],
+        Poster: "https://m.media-amazon.com/images/M/MV5BMjhhMDU5Y2QtMzcyZS00ZGE1LTg3ZjMtMTYyOTM0OTFlYTRkXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg"
       }
 });
 
@@ -120,7 +149,8 @@ const newScreening3 = new ScreeningModel({
         Runtime: 200,
         Synopsis: "Batman film init",
         Classification: "15",
-        Genres: ["Superhero", "Comic Book", "Crime"]
+        Genres: ["Superhero", "Comic Book", "Crime"],
+        Poster: "https://cdn.europosters.eu/image/750webp/122127.webp"
       }
 });
 
@@ -139,13 +169,25 @@ const newScreening4 = new ScreeningModel({
         Runtime: 200,
         Synopsis: "Batman film init",
         Classification: "15",
-        Genres: ["Superhero", "Comic Book", "Crime"]
+        Genres: ["Superhero", "Comic Book", "Crime"],
+        Poster: "https://cdn.europosters.eu/image/750webp/122127.webp"
       }
 });
 
 newScreening4.save().then(() => console.log("Saved screening: ", newScreening4));
 
 const BookingModel = mongoose.model("Bookings", BookingSchema);
+BookingModel.deleteMany({}).then(result =>{
+    console.log(result);
+}).catch(err =>{
+    console.log(err);
+});
+// BookingModel.collection.drop().then(result => {console.log(result)})
+// .catch(err => {
+//     console.log(err);
+// });
+
+
 
 const newBooking = new BookingModel({
     CustomerRef: "90AB223",
@@ -173,6 +215,15 @@ newBooking.save().then(() => console.log("Saved booking: ", newBooking));
 
 const discussionModel = mongoose.model("Discussions", DiscussionSchema);
 
+discussionModel.deleteMany({}).then(result =>{
+    console.log(result);
+}).catch(err =>{
+    console.log(err);
+});
+// discussionModel.collection.drop().then(result => {console.log(result)})
+// .catch(err => {
+//     console.log(err);
+// });
 
 
 const newPost1 = new discussionModel(
