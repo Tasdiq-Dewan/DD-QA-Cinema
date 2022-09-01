@@ -22,7 +22,7 @@ const bookingSchema = new BookingsSchema({
     AmountPaid: {type: Number, required: true},
     TransactionRef: {type: String, required: true},
     Screening: {
-        Screening_id: {type: Number, required: true, unique: true},
+        Screening_id: {type: Number, required: true},
         Title : {type: String, required: true},
         Runtime : {type: Number, required: true},
         ScreeningType : [{type: String, required: true}],

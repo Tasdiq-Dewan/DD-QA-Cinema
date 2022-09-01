@@ -9,12 +9,13 @@ const screeningSchema = new ScreeningSchema({
     ScreeningTime : {type: Date, required: true, default: Date.now},
     AvailableSeats : {type:[String], required: true, default: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25"]},
     Film : {
-        Film_id : {type: String, required: true, unique: true},
+        Film_id : {type: String, required: true},
         Title : {type: String, required: true},
         Runtime : {type: Number, required: true},
         Synopsis : {type: String, required: true},
         Classification : {type: String, required: true},
-        Genres: {type: [String], required: true, min: 1}
+        Genres: {type: [String], required: true, min: 1},
+        Poster:{type: String}
     }
 });
 
