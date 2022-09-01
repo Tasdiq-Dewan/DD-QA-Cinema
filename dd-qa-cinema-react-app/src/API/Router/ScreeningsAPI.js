@@ -19,12 +19,29 @@ router.get("/getAllScreenings", (req, res) =>{
     });
 });
 
-router.post("/AddScreening", (req, res) =>{
+router.get("/getAllScreeningsById/:id", (req, res) =>{
+    ScreeningModel.findOne({Screening_id : req.params.id}).select('-_id -__v').then((result) =>{
+        res.send(JSON.stringify(result));
+        console.log(JSON.stringify(result));
+    }).catch(err =>{
+        console.log(err)
+    });
+});
+
+router.post("/addScreening", (req, res) =>{
     ScreeningModel.create(req.body).then((result)=>{
         res.send(JSON.stringify(result));
     }).catch(err=>{
         console.log(err);
     })
+})
+
+router.put("/updateScreening/:id", (req, res) =>{
+    ScreeningModel.findOneAndUpdate(
+        { Screening_id : req.params.id }, {NumberOfSeats: req.body.NumberOfSeats})
+        .then(result =>{
+            res.send(JSON.stringify(result));
+        })
 })
 
 module.exports = router;

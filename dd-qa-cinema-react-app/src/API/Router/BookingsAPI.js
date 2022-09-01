@@ -19,8 +19,27 @@ router.get("/getAllBookings", (req, res) =>{
     });
 });
 
-router.post("/AddBooking", (req, res) => {
+
+router.get("/getBookingByRef/:ref", (req, res) =>{
+    BookingModel.findOne({CustomerRef: req.params.ref}).select('-_id -__v').then((result) =>{
+        res.send(JSON.stringify(result));
+        console.log(JSON.stringify(result));
+    }).catch(err =>{
+        console.log(err)
+    });
+});
+
+router.post("/addBooking", (req, res) => {
     BookingModel.create(req.body).then((result)=>{
+        res.send(JSON.stringify(result));
+        console.log(result);
+    }).catch(err=>{
+        console.log(err);
+    })
+})
+
+router.delete("/deleteBooking/:ref", (req, res) => {
+    BookingModel.findOneAndDelete({CustomerRef: req.params.ref}).then((result)=>{
         res.send(JSON.stringify(result));
         console.log(result);
     }).catch(err=>{

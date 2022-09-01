@@ -21,7 +21,7 @@ router.get("/getAllFilms", (req, res) =>{
 });
 
 router.get("/getById/:id", (req, res) =>{
-    FilmModel.find({Film_id: req.params.id}).select('-_id -__v').then((result) =>{
+    FilmModel.findOne({Film_id: req.params.id}).select('-_id -__v').then((result) =>{
         res.send(JSON.stringify(result));
         console.log(JSON.stringify(result));
     }).catch(err =>{
