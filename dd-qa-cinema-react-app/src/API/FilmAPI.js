@@ -11,6 +11,6 @@ mongoose.connect("mongodb://localhost:27017/mongo").then(res=>{
 });
 
 const FilmModel = mongoose.model("Films", FilmSchema);
-console.log(FilmModel.find());
+
 
 module.exports = router;
