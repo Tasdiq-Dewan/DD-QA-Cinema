@@ -19,8 +19,17 @@ router.get("/getAllScreenings", (req, res) =>{
     });
 });
 
-router.get("/getAllScreeningsById/:id", (req, res) =>{
+router.get("/getScreeningById/:id", (req, res) =>{
     ScreeningModel.findOne({Screening_id : req.params.id}).select('-_id -__v').then((result) =>{
+        res.send(JSON.stringify(result));
+        console.log(JSON.stringify(result));
+    }).catch(err =>{
+        console.log(err)
+    });
+});
+
+router.get("/searchScreeningsByTerm/:term", (req, res) =>{
+    ScreeningModel.find({$text :{$search: req.params.term}}).select('-_id -__v').then((result) =>{
         res.send(JSON.stringify(result));
         console.log(JSON.stringify(result));
     }).catch(err =>{
@@ -38,7 +47,7 @@ router.post("/addScreening", (req, res) =>{
 
 router.put("/updateScreening/:id", (req, res) =>{
     ScreeningModel.findOneAndUpdate(
-        { Screening_id : req.params.id }, {NumberOfSeats: req.body.NumberOfSeats})
+        { Screening_id : req.params.id }, {$pull: {AvailableSeats: {$in: req.body.bookedSeats}}})
         .then(result =>{
             res.send(JSON.stringify(result));
         })

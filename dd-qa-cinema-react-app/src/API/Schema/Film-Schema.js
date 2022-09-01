@@ -7,7 +7,7 @@ const filmSchema = new FilmSchema({
     Runtime : {type: Number, required: true},
     Synopsis : {type: String, required: true},
     Classification : {type: String, required: true},
-    Genres: [{type: String, required: true, min: 1}]
+    Genres: {type: [String], required: true, min: 1}
 });
 
 filmSchema.index({Title: "text", Genres: "text", Synopsis: "text", Classification: "text"});

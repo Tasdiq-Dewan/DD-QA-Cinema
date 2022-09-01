@@ -12,7 +12,7 @@ const ticketsSchema = new TicketsSchema({
 //Bookings Schema, defining a schema, later used as a model
 const bookingSchema = new BookingsSchema({
     CustomerRef: {type: String, required: true, max: 30, unique: true},
-    Seats: [{type: Number, default: 1, required: true, unique: true}],
+    Seats: [{type: String, default: 1, required: true, unique: true}],
     Tickets : {
         AdultPrice: {type:Number, default:7},
         ChildPrice: {type:Number, default:5},
