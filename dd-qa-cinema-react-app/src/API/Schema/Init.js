@@ -61,7 +61,7 @@ const newFilm5 = new FilmModel({
     Film_id: 5,
     Title: "The Dark Knight",
     Runtime: 152,
-    Synopsis: "Why so serious, init",
+    Synopsis: "Why so serious Batman, init",
     Classification: "12",
     Genres: ["Superhero", "Action", "Comic Book", "Crime", "Clown"]
 });

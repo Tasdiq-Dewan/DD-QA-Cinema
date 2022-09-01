@@ -48,9 +48,18 @@ router.get("/searchByTerm/:term", (req, res) =>{
 });
 
 
-router.post("/AddFilm", (req, res) =>{
+router.post("/addFilm", (req, res) =>{
     FilmModel.create(req.body).then((result) =>{
         res.send(JSON.stringify(result));
+        console.log(JSON.stringify(result));
+    }).catch(err =>{
+        console.log(err)
+    });
+});
+
+router.delete("/deleteFilm/:id", (req, res) =>{
+    FilmModel.deleteOne({Film_id : req.params.id}).then((result) =>{
+        res.send(JSON.stringify(result.deletedCount == 0 ? "Error: No Film with that ID exists" : "Film deleted"));
         console.log(JSON.stringify(result));
     }).catch(err =>{
         console.log(err)
