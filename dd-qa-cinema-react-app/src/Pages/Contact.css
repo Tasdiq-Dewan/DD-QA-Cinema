@@ -1,0 +1,43 @@
+/**
+   styles for the contact form
+*/
+
+form {
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: monospace;
+    font-size: 1.0rem;
+}
+
+textarea, input {
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    border-radius: 4px;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+button {
+    position: relative;
+    background: #0E0E0E;
+    color: white;
+    text-transform: uppercase;
+    border: none;
+    font-weight: 600;
+    margin-top: 20px;
+    padding: 20px;
+    font-size: 16px;
+    letter-spacing: 2px;
+    display: block;
+    border-radius: 4px; 
+    width: 200px;
+    transition: 0.3s all;
+    letter-spacing: 0.5rem;
+    
+}
+
+textarea {
+    height: 200px;
+}
