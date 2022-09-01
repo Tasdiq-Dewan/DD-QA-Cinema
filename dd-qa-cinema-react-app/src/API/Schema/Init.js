@@ -78,7 +78,6 @@ const newScreening1 = new ScreeningModel({
     Runtime : 100,
     ScreeningType : ["2D", "Subtitle", "Audio Described"],
     ScreeningTime : "2022-09-02T12:00:00Z",
-    NumberOfSeats : 30,
     Film : {
         Film_id: '3',
         Title: 'Dragon Ball Super: Broly',
@@ -97,7 +96,6 @@ const newScreening2 = new ScreeningModel({
     Runtime : 100,
     ScreeningType : ["2D", "Subtitle", "Audio Described"],
     ScreeningTime : "2022-09-02T15:30:00Z",
-    NumberOfSeats : 30,
     Film : {
         Film_id: '3',
         Title: 'Dragon Ball Super: Broly',
@@ -116,7 +114,6 @@ const newScreening3 = new ScreeningModel({
     Runtime : 200,
     ScreeningType : ["2D", "Audio Described"],
     ScreeningTime : "2022-09-02T19:00:00Z",
-    NumberOfSeats : 30,
     Film : {
         Film_id: 1,
         Title: "The Batman",
@@ -135,7 +132,7 @@ const newScreening4 = new ScreeningModel({
     Runtime : 200,
     ScreeningType : ["2D", "Audio Described"],
     ScreeningTime : "2022-09-02T23:00:00Z",
-    NumberOfSeats : 30,
+    AvailableSeats: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "17", "18", "19", "20", "21", "22", "23", "24", "25"],
     Film : {
         Film_id: 1,
         Title: "The Batman",
@@ -152,7 +149,7 @@ const BookingModel = mongoose.model("Bookings", BookingSchema);
 
 const newBooking = new BookingModel({
     CustomerRef: "90AB223",
-    Seats: [15, 16],
+    Seats: ["15", "16"],
     Tickets : {
         AdultPrice: 7,
         ChildPrice: 5,
