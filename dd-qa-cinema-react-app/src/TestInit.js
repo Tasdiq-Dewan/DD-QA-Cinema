@@ -1,12 +1,12 @@
-const {FilmSchema} = require("./Film-Schema");
-const {ScreeningSchema} = require("./Screening-Schema");
-const {BookingSchema} = require("./Bookings-Schema");
-const {DiscussionSchema} = require("./Discussions-Schema.js");
+const {FilmSchema} = require("./API/Schema/Film-Schema.js");
+const {ScreeningSchema} = require("./API/Schema/Screening-Schema.js");
+const {BookingSchema} = require("./API/Schema/Bookings-Schema.js");
+const {DiscussionSchema} = require("./API/Schema/Discussions-Schema.js");
 
 const mongoose = require("mongoose");
 const { json } = require("express");
 
-mongoose.connect("mongodb://localhost:27017/mongo").then(res=>{
+mongoose.connect("mongodb://localhost:27017/qa-cinema-test").then(res=>{
     console.log("connected FilmAPI");
 }).catch(err => {
     console.log(errMessage);
