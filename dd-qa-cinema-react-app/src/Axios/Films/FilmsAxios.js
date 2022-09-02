@@ -70,4 +70,7 @@ const SearchFilm = () =>{
 }
 
 
-export default SearchFilm;
+export {
+    GetFilms,
+    SearchFilm
+}
