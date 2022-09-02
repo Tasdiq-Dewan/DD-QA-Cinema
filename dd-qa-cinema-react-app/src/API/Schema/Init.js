@@ -6,7 +6,7 @@ const {DiscussionSchema} = require("./Discussions-Schema.js");
 const mongoose = require("mongoose");
 const { json } = require("express");
 
-mongoose.connect("mongodb://localhost:27017/mongo").then(res=>{
+mongoose.connect("mongodb://localhost:27017/qa-cinema").then(res=>{
     console.log("connected FilmAPI");
 }).catch(err => {
     console.log(errMessage);
