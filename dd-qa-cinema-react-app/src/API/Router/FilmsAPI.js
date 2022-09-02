@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const {FilmSchema} = require("../Schema/Film-Schema");
 const mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost:27017/mongo").then(res=>{
+mongoose.connect(global.dburl).then(res=>{
     console.log("connected FilmAPI");
 }).catch(err => {
 
