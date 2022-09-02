@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 mongoose.connect("mongodb://localhost:27017/mongo").then(res=>{
     console.log("connected FilmAPI");
 }).catch(err => {
-    console.log(errMessage);
+
     console.log(err);
 });
 
@@ -59,7 +59,7 @@ router.post("/addFilm", (req, res) =>{
 
 router.delete("/deleteFilm/:id", (req, res) =>{
     FilmModel.deleteOne({Film_id : req.params.id}).then((result) =>{
-        res.send(JSON.stringify(result.deletedCount == 0 ? "Error: No Film with that ID exists" : "Film deleted"));
+        res.send(JSON.stringify(result.deletedCount === 0 ? "Error: No Film with that ID exists" : "Film deleted"));
         console.log(JSON.stringify(result));
     }).catch(err =>{
         console.log(err)

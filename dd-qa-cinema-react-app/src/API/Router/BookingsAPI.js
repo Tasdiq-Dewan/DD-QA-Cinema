@@ -4,7 +4,6 @@ const mongoose = require("mongoose");
 mongoose.connect("mongodb://localhost:27017/mongo").then(res=>{
     console.log("connected BookingsAPI");
 }).catch(err => {
-    console.log(errMessage);
     console.log(err);
 });
 

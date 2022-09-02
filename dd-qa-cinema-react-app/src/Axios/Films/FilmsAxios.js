@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
 
 const GetFilms = () => {
     const [films, setFilms] = useState([]);
@@ -28,8 +28,6 @@ const GetFilms = () => {
             }
             </ul></h1>
         </>
-
-
     );
 }
 

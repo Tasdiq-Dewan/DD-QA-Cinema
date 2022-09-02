@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 mongoose.connect("mongodb://localhost:27017/mongo").then(res=>{
     console.log("connected DiscussionsAPI");
 }).catch(err => {
-    console.log(errMessage);
+
     console.log(err);
 });
 
