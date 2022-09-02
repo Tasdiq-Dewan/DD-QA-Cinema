@@ -15,6 +15,6 @@ filmSchema.index({Title: "text", Genres: "text", Synopsis: "text", Classificatio
 
 const FilmModel = mongoose.model("Films", filmSchema);
 
-module.export = {FilmModel: FilmModel, FilmSchema: filmSchema};
+module.export = {FilmModel, FilmSchema: filmSchema};
 
 
