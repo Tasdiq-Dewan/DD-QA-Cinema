@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-
+import './Searchbar.css'
 const GetFilms = () => {
     const [films, setFilms] = useState([]);
 
@@ -33,37 +33,47 @@ const GetFilms = () => {
 
 const SearchFilm = () =>{
     const [film, setFilm] = useState([]);
-    const [search, setSearch] = useState("");
 
-    const searchTerms = (e) =>{
-        setSearch(e.target.value);
-    }
 
-    const searchFilm =(e) => {
-        axios.get("http://localhost:8081/api/searchByTerm/" + search).then(result =>{
+    const getFilm = async (e) => {
+     if(e.target.value != 0){
+        axios.get("http://localhost:8081/api/searchByTerm/" + e.target.value).then(result =>{
             setFilm(result.data);
             console.log(result.data);
         })
-    }
-    
-    return(
-        <>
-        <input type="text" onChange={e => searchTerms(e)} ></input>
-        <button onClick={e => searchFilm(e)}>onClick</button>
+        }
 
-        <h1><ul>
+    }
+
+
+    return(
+    
+
+    <div className='search'>
+       
+     <input type="text" className = 'search-input' placeholder= "Enter Film..." onChange={e => getFilm(e)}></input>
+       <div className='search-icon'></div>
+         
+          <div className='search-result'>
+
+    
             {
             film.map(film =>(
-                <li key={film.id}><h1>{film.Title}</h1>
-                <p>Runtime: {film.Runtime}</p>
-                <p>Synopsis: {film.Synopsis}</p>
-                <p>Classification: {film.Classification}</p>
-                <h2><img src={film.Poster}></img></h2>
-                </li>
+                
+                <a key={film.id} href="bookingpage" className = 'data-item' >
+                    <div className = 'film-title'>
+                <h4>{film.Title}</h4>
+                <p>{film.Synopsis}<p>{film.Classification}</p></p>
+                <p><img src={film.Poster}></img></p>
+                </div>
+                </a>
+                
             ))
             }
-            </ul></h1>
-        </>
+      
+          </div>
+    </div>
+
     );
 }
 

@@ -1,13 +1,12 @@
 .NavbarItems {
     background: #242424;
-    height: 80px;
+    height: 70px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.2rem;
     position: sticky;
     top: 0;
-    z-index: 999;
 }
 
 .navbar-logo{
@@ -49,7 +48,7 @@
 
 .nav-links:hover{
     border-bottom: 4px solid #30d456;
-    color: #30d456;
+    color: black;
     
 }
 

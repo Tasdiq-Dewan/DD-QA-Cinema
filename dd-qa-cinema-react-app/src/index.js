@@ -5,12 +5,13 @@ import App from './App';
 import Booking from './Pages/Booking.js';
 import {SearchFilm} from './Axios/Films/FilmsAxios';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-    <Booking/>
-  </React.StrictMode>
+  <BrowserRouter>
+    <App/>
+  </BrowserRouter>
 );
 
 // If you want to start measuring performance in your app, pass a function

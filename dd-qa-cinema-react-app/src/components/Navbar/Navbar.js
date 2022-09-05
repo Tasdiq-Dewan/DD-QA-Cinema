@@ -1,6 +1,7 @@
 import React, { Component, useState } from 'react'
 import {Link} from 'react-router-dom';
 import { MenuItems } from './MenuItems';
+import { SearchFilm } from '../../Axios/Films/FilmsAxios';
 import './Navbar.css'
 
 
@@ -30,6 +31,7 @@ class Navbar extends Component {
 
     render(){
         return(
+            <>
             <nav className="NavbarItems">
                 <Link to="/" className='navbar-logo'>
                     QA-Cinemas
@@ -48,7 +50,10 @@ class Navbar extends Component {
                         )
                     })}
                 </ul>
+               
             </nav>
+             <SearchFilm/>
+             </>
         )
     }
 }
