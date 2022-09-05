@@ -5,7 +5,7 @@ const app = require("./TestAPICall.js");
 const expect = chai.expect;
 const mongoose = require("mongoose");
 const { beforeEach } = require('mocha');
-const {ScreeningSchema} = require("../src/API/Schema/Screening-Schema.js");
+const {createData, clearCollections} = require("../src/TestInit.js")
 
 
 const screening1 = {
@@ -100,25 +100,14 @@ const newScreening = {
 
 const allScreenings = [screening1, screening2, screening3, screening4];
 
-const ScreeningModel = mongoose.model("Screenings", ScreeningSchema);
-const reset1 = new ScreeningModel(screening1);
-const reset2 = new ScreeningModel(screening2);
-const reset3 = new ScreeningModel(screening3);
-const reset4 = new ScreeningModel(screening4);
-async function  recreateScreenings(){
-    await reset1.save();
-    await reset2.save();
-    await reset3.save();
-    await reset4.save();
-    return true;
-}
+
 
 chai.should();
-describe("Screenings test", () => {
+describe("Screenings test", function (){
 
-    beforeEach(() => {
-        ScreeningModel.deleteMany({}, (err) => console.log(err));
-        ScreeningModel.insertMany(allScreenings);
+    this.beforeEach(async () => {
+        await clearCollections();
+        await createData();
     });
     describe("GET /", () => {
         it("should get screening with id 1", (done) => {

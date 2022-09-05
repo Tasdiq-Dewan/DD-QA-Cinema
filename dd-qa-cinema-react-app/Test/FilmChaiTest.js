@@ -3,6 +3,8 @@ const chaiHttp = require('chai-http');
 chai.use(chaiHttp);
 const app = require("./TestAPICall.js");
 const expect = chai.expect;
+const {createData, clearCollections} = require("../src/TestInit.js")
+const mongoose = require("mongoose");
 
 
 
@@ -17,7 +19,12 @@ const film1 = {
 }
 
 chai.should();
-describe("Films", () => {
+describe("Films", function (){
+
+    this.beforeEach(async () => {
+        await clearCollections();
+        await createData();
+    });
     describe("GET /", () => {
         it("should get film with id 1", (done) => {
              chai.request(app)
