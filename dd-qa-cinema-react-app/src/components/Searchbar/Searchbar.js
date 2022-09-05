@@ -1,14 +1,25 @@
 import React from 'react'
-import { useState } from 'react'
-import './Searchbar.css'
+import { useEffect, useState } from 'react'
 
+    
+function SearchBar(){
+    const [data, setData] = useState([])
 
-function SearchBar({placeholder, data}){
+    useEffect=(() => {
+    
+        const fetchData = async () => {
+            const result = await fetch("http://localhost:8081/api/getAllFilms")
+            const jsonResult = await result.json()
+
+            const data1 = setData(jsonResult)
+    } 
+        fetchData()
+    }, []);
 
     const [filteredData, setFilteredData] = useState([])
-
+    
     const handleFilter = (e) => {
-       const searchWord = e.target.value
+        const searchWord = e.target.value;
        const newFilter = data.filter((value) =>{
          if(
           value.title.toLowerCase().includes(searchWord.toLowerCase())
@@ -24,10 +35,10 @@ function SearchBar({placeholder, data}){
 
     return(
     <div className='search'>
-       <div classname="search-input">
-        <input type='text' placeholder={placeholder} onChange={handleFilter} />
+       
+        <input type='text' className= 'search-input' onChange={handleFilter} />
         <div className='search-icon'></div>
-       </div>
+   
 
        { filteredData.slice(0,5).length != 0 && (
 
@@ -45,5 +56,4 @@ function SearchBar({placeholder, data}){
 
  
 }
-
-export default SearchBar
+export default SearchBar;

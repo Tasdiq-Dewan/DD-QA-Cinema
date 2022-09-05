@@ -85,6 +85,7 @@ function Booking(){
                        <p><input type="text" id="seats" placeholder="e.g. 3, 4, 5...." required/></p>
                     </form>
                 </td>
+
                 <td>
                     <form className='payment-form'>
                       <p><label for="name"><b>Name on card:</b></label></p>
