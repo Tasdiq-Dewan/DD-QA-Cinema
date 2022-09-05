@@ -5,35 +5,25 @@ const {DiscussionSchema} = require("./API/Schema/Discussions-Schema.js");
 
 const mongoose = require("mongoose");
 const { json } = require("express");
+const { dblClick } = require("@testing-library/user-event/dist/click.js");
 
 mongoose.connect("mongodb://localhost:27017/qa-cinema-test").then(res=>{
-    console.log("connected FilmAPI");
+    console.log("connected to test db");
 }).catch(err => {
     console.log(errMessage);
     console.log(err);
 });
 
-// async function clearCollections() {
-//     const collections = mongoose.connection.collections;
-  
-//     await Promise.all(Object.values(collections).map(async (collection) => {
-//         await collection.deleteMany({});
-//     }));
-//   }
+// async function clearCollections(){
+//     mongoose.connection.collection("screenings").drop().then((dropped) => console.log("Screenings dropped: ", dropped));
+//     mongoose.connection.collection("films").drop().then((dropped) => console.log("Films dropped: ", dropped));
+//     mongoose.connection.collection("bookings").drop().then((dropped) => console.log("Bookings dropped: ", dropped));
+//     mongoose.connection.collection("discussions").drop().then((dropped) => console.log("Discussions dropped: ", dropped));
+// }
 
-// clearCollections();
 
 const FilmModel = mongoose.model("Films", FilmSchema);
 
-// FilmModel.collection.drop().then(result => {console.log(result)})
-// .catch(err => {
-//     console.log(err);
-// });
-FilmModel.deleteMany({}).then(result =>{
-    console.log(result);
-}).catch(err =>{
-    console.log(err);
-});
 const newFilm1 = new FilmModel({
     Film_id: "1",
     Title: "The Batman",
@@ -100,11 +90,6 @@ ScreeningModel.deleteMany({}).then(result =>{
 }).catch(err =>{
     console.log(err);
 });
-
-// ScreeningModel.collection.drop().then(result => {console.log(result)})
-// .catch(err => {
-//     console.log(err);
-// });
 
 
 const newScreening1 = new ScreeningModel({
@@ -190,12 +175,6 @@ BookingModel.deleteMany({}).then(result =>{
 }).catch(err =>{
     console.log(err);
 });
-// BookingModel.collection.drop().then(result => {console.log(result)})
-// .catch(err => {
-//     console.log(err);
-// });
-
-
 
 const newBooking = new BookingModel({
     CustomerRef: "90AB223",
@@ -219,8 +198,6 @@ const newBooking = new BookingModel({
 
 newBooking.save().then(() => console.log("Saved booking: ", newBooking));
 
-
-
 const discussionModel = mongoose.model("Discussions", DiscussionSchema);
 
 discussionModel.deleteMany({}).then(result =>{
@@ -228,10 +205,6 @@ discussionModel.deleteMany({}).then(result =>{
 }).catch(err =>{
     console.log(err);
 });
-// discussionModel.collection.drop().then(result => {console.log(result)})
-// .catch(err => {
-//     console.log(err);
-// });
 
 
 const newPost1 = new discussionModel(
@@ -250,4 +223,4 @@ const newPost2 = new discussionModel(
         PostTitle:"I am fake",
         PostMessage:"Daniyal is real, I am fake, I am sorry for being fake, thank you babes"
     });
-    newPost2.save().then(() => console.log("Saved Post: ", newPost2));
+newPost2.save().then(() => console.log("Saved Post: ", newPost2));

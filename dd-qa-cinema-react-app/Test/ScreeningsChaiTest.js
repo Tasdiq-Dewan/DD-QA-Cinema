@@ -3,7 +3,8 @@ const chaiHttp = require('chai-http');
 chai.use(chaiHttp);
 const app = require("./TestAPICall.js");
 const expect = chai.expect;
-
+const mongoose = require("mongoose");
+const {ScreeningSchema} = require("../src/API/Schema/Screening-Schema.js");
 
 
 const screening1 = {
@@ -78,10 +79,46 @@ const screening4 = {
       }
 };
 
+const newScreening = {
+    Screening_id: 3,
+    Title : "The Batman",
+    Runtime : 200,
+    ScreeningType : ["2D", "Audio Described"],
+    ScreeningTime : "2022-09-03T09:00:00.000Z",
+    AvailableSeats: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25"],
+    Film : {
+        Film_id: "1",
+        Title: "The Batman",
+        Runtime: 200,
+        Synopsis: "Batman film init",
+        Classification: "15",
+        Genres: ["Superhero", "Comic Book", "Crime"],
+        Poster: "https://cdn.europosters.eu/image/750webp/122127.webp"
+      }
+}
+
 const allScreenings = [screening1, screening2, screening3, screening4];
+
+const ScreeningModel = mongoose.model("Screenings", ScreeningSchema);
+const reset1 = new ScreeningModel(screening1);
+const reset2 = new ScreeningModel(screening2);
+const reset3 = new ScreeningModel(screening3);
+const reset4 = new ScreeningModel(screening4);
+async function  recreateScreenings(){
+    await reset1.save();
+    await reset2.save();
+    await reset3.save();
+    await reset4.save();
+}
 
 chai.should();
 describe("Screenings test", () => {
+    // after(async () => {
+    //     const url = "mongodb://localhost:27017/qa-cinema-test";
+    //     await mongoose.connect(url);
+    //     await mongoose.connection.collection("screenings").drop();
+    //     recreateScreenings();
+    // });
     describe("GET /", () => {
         it("should get screening with id 1", (done) => {
              chai.request(app)
@@ -115,6 +152,19 @@ describe("Screenings test", () => {
                    expect(res.body).to.be.eql([screening2, screening1]);
                    done();
             });
+        });
+    });
+    describe("POST /", () => {
+        it("should create new screening", (done) => {
+            chai.request(app)
+                .post('api/addScreening').send(newScreening)
+                .end((err, res) => {
+                    //res.body = JSON.parse(res.text);
+                    expect(err).to.be.null;
+                    expect(res).to.have.status(200);
+                    expect(res.body).to.be.eql(newScreening);
+                    done();
+                })
         });
     });
 });
