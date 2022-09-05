@@ -92,7 +92,7 @@ describe("Screenings test", () => {
                     expect(res).to.have.status(200);
                     expect(res.body).to.be.eql(screening1);
                     done();
-                  });
+            });
          });
          it("should get all screenings", (done) => {
             chai.request(app)
@@ -103,7 +103,18 @@ describe("Screenings test", () => {
                    expect(res).to.have.status(200);
                    expect(res.body).to.be.eql(allScreenings);
                    done();
-                 });
+            });    
+        });   
+        it("should search for screenings with search term 'Dragon Ball'", (done) => {
+            chai.request(app)
+                .get('/api/searchScreeningsByTerm/Dragon%20Ball')
+                .end((err, res) => {
+                   res.body = JSON.parse(res.text);
+                   expect(err).to.be.null;
+                   expect(res).to.have.status(200);
+                   expect(res.body).to.be.eql([screening2, screening1]);
+                   done();
+            });
         });
     });
 });
