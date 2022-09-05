@@ -29,11 +29,11 @@ const FilmModel = mongoose.model("Films", FilmSchema);
 // .catch(err => {
 //     console.log(err);
 // });
-FilmModel.deleteMany({}).then(result =>{
-    console.log(result);
-}).catch(err =>{
-    console.log(err);
-});
+// FilmModel.deleteMany({}).then(result =>{
+//     console.log(result);
+// }).catch(err =>{
+//     console.log(err);
+// });
 const newFilm1 = new FilmModel({
     Film_id: 1,
     Title: "The Batman",
