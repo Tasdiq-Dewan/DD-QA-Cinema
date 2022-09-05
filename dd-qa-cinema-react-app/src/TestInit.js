@@ -35,7 +35,7 @@ FilmModel.deleteMany({}).then(result =>{
     console.log(err);
 });
 const newFilm1 = new FilmModel({
-    Film_id: 1,
+    Film_id: "1",
     Title: "The Batman",
     Runtime: 200,
     Synopsis: "Batman film init",
@@ -47,7 +47,7 @@ const newFilm1 = new FilmModel({
 newFilm1.save().then(() => console.log("Saved film: ", newFilm1));
 
 const newFilm2 = new FilmModel({
-    Film_id: 2,
+    Film_id: "2",
     Title: "Nope",
     Runtime: 135,
     Synopsis: "Alien in the clouds, init",
@@ -59,7 +59,7 @@ const newFilm2 = new FilmModel({
 newFilm2.save().then(() => console.log("Saved film: ", newFilm2));
 
 const newFilm3 = new FilmModel({
-    Film_id: 3,
+    Film_id: "3",
     Title: "Dragon Ball Super: Broly",
     Runtime: 100,
     Synopsis: "Super Saiyans fighting, init",
@@ -71,7 +71,7 @@ const newFilm3 = new FilmModel({
 newFilm3.save().then(() => console.log("Saved film: ", newFilm3));
 
 const newFilm4 = new FilmModel({
-    Film_id: 4,
+    Film_id: "4",
     Title: "I Am Legend",
     Runtime: 101,
     Synopsis: "Dog dies, init",
@@ -83,7 +83,7 @@ const newFilm4 = new FilmModel({
 newFilm4.save().then(() => console.log("Saved film: ", newFilm4));
 
 const newFilm5 = new FilmModel({
-    Film_id: 5,
+    Film_id: "5",
     Title: "The Dark Knight",
     Runtime: 152,
     Synopsis: "Why so serious Batman, init",
@@ -152,7 +152,7 @@ const newScreening3 = new ScreeningModel({
     ScreeningType : ["2D", "Audio Described"],
     ScreeningTime : "2022-09-02T19:00:00Z",
     Film : {
-        Film_id: 1,
+        Film_id: '1',
         Title: "The Batman",
         Runtime: 200,
         Synopsis: "Batman film init",
@@ -172,7 +172,7 @@ const newScreening4 = new ScreeningModel({
     ScreeningTime : "2022-09-02T23:00:00Z",
     AvailableSeats: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "17", "18", "19", "20", "21", "22", "23", "24", "25"],
     Film : {
-        Film_id: 1,
+        Film_id: '1',
         Title: "The Batman",
         Runtime: 200,
         Synopsis: "Batman film init",
