@@ -14,16 +14,26 @@ mongoose.connect("mongodb://localhost:27017/qa-cinema-test").then(res=>{
     console.log(err);
 });
 
-// async function clearCollections(){
-//     mongoose.connection.collection("screenings").drop().then((dropped) => console.log("Screenings dropped: ", dropped));
-//     mongoose.connection.collection("films").drop().then((dropped) => console.log("Films dropped: ", dropped));
-//     mongoose.connection.collection("bookings").drop().then((dropped) => console.log("Bookings dropped: ", dropped));
-//     mongoose.connection.collection("discussions").drop().then((dropped) => console.log("Discussions dropped: ", dropped));
-// }
+(async function clearCollections(){
+    // mongoose.connection.collection("screenings").drop().then((dropped) => console.log("Screenings dropped: ", dropped));
+    // mongoose.connection.collection("films").drop().then((dropped) => console.log("Films dropped: ", dropped));
+    // mongoose.connection.collection("bookings").drop().then((dropped) => console.log("Bookings dropped: ", dropped));
+    // mongoose.connection.collection("discussions").drop().then((dropped) => console.log("Discussions dropped: ", dropped));
+    await mongoose.connection.collection("screenings").drop()
+    await mongoose.connection.collection("films").drop()
+    await mongoose.connection.collection("bookings").drop()
+    await mongoose.connection.collection("discussions").drop()
+    return true;
+})();
 
 
 const FilmModel = mongoose.model("Films", FilmSchema);
 
+// FilmModel.deleteMany({}).then(result =>{
+//     console.log(result);
+// }).catch(err =>{
+//     console.log(err);
+// });
 const newFilm1 = new FilmModel({
     Film_id: "1",
     Title: "The Batman",
@@ -85,11 +95,11 @@ const newFilm5 = new FilmModel({
 newFilm5.save().then(() => console.log("Saved film: ", newFilm5));
 
 const ScreeningModel = mongoose.model("Screenings", ScreeningSchema);
-ScreeningModel.deleteMany({}).then(result =>{
-    console.log(result);
-}).catch(err =>{
-    console.log(err);
-});
+// ScreeningModel.deleteMany({}).then(result =>{
+//     console.log(result);
+// }).catch(err =>{
+//     console.log(err);
+// });
 
 
 const newScreening1 = new ScreeningModel({
@@ -170,11 +180,11 @@ const newScreening4 = new ScreeningModel({
 newScreening4.save().then(() => console.log("Saved screening: ", newScreening4));
 
 const BookingModel = mongoose.model("Bookings", BookingSchema);
-BookingModel.deleteMany({}).then(result =>{
-    console.log(result);
-}).catch(err =>{
-    console.log(err);
-});
+// BookingModel.deleteMany({}).then(result =>{
+//     console.log(result);
+// }).catch(err =>{
+//     console.log(err);
+// });
 
 const newBooking = new BookingModel({
     CustomerRef: "90AB223",
@@ -200,11 +210,11 @@ newBooking.save().then(() => console.log("Saved booking: ", newBooking));
 
 const discussionModel = mongoose.model("Discussions", DiscussionSchema);
 
-discussionModel.deleteMany({}).then(result =>{
-    console.log(result);
-}).catch(err =>{
-    console.log(err);
-});
+// discussionModel.deleteMany({}).then(result =>{
+//     console.log(result);
+// }).catch(err =>{
+//     console.log(err);
+// });
 
 
 const newPost1 = new discussionModel(

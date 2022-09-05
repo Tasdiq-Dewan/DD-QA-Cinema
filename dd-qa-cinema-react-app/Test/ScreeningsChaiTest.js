@@ -4,6 +4,7 @@ chai.use(chaiHttp);
 const app = require("./TestAPICall.js");
 const expect = chai.expect;
 const mongoose = require("mongoose");
+const { beforeEach } = require('mocha');
 const {ScreeningSchema} = require("../src/API/Schema/Screening-Schema.js");
 
 
@@ -80,7 +81,7 @@ const screening4 = {
 };
 
 const newScreening = {
-    Screening_id: 3,
+    Screening_id: 5,
     Title : "The Batman",
     Runtime : 200,
     ScreeningType : ["2D", "Audio Described"],
@@ -109,16 +110,16 @@ async function  recreateScreenings(){
     await reset2.save();
     await reset3.save();
     await reset4.save();
+    return true;
 }
 
 chai.should();
 describe("Screenings test", () => {
-    // after(async () => {
-    //     const url = "mongodb://localhost:27017/qa-cinema-test";
-    //     await mongoose.connect(url);
-    //     await mongoose.connection.collection("screenings").drop();
-    //     recreateScreenings();
-    // });
+
+    beforeEach(() => {
+        ScreeningModel.deleteMany({}, (err) => console.log(err));
+        ScreeningModel.insertMany(allScreenings);
+    });
     describe("GET /", () => {
         it("should get screening with id 1", (done) => {
              chai.request(app)
@@ -157,12 +158,25 @@ describe("Screenings test", () => {
     describe("POST /", () => {
         it("should create new screening", (done) => {
             chai.request(app)
-                .post('api/addScreening').send(newScreening)
+                .post('/api/addScreening').send(JSON.stringify(newScreening))
                 .end((err, res) => {
-                    //res.body = JSON.parse(res.text);
+                    res.body = JSON.parse(res.text);
                     expect(err).to.be.null;
                     expect(res).to.have.status(200);
                     expect(res.body).to.be.eql(newScreening);
+                    done();
+                })
+        });
+    });
+    describe("PUT /", () => {
+        it("should update screening to remove available seats based on request body", (done) => {
+            chai.request(app)
+                .put('/api/updateScreening/2').send({bookedSeats: ["9", "10"]})
+                .end((err, res) => {
+                    res.body = JSON.parse(res.text);
+                    expect(err).to.be.null;
+                    expect(res).to.have.status(200);
+                    expect(res.body).to.be.eql(screening2);
                     done();
                 })
         });
