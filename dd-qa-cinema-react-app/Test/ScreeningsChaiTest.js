@@ -158,9 +158,11 @@ describe("Screenings test", () => {
     describe("POST /", () => {
         it("should create new screening", (done) => {
             chai.request(app)
-                .post('/api/addScreening').send(JSON.stringify(newScreening))
+                .post('/api/addScreening').send(newScreening)
                 .end((err, res) => {
                     res.body = JSON.parse(res.text);
+                    delete res.body.__v;
+                    delete res.body._id;
                     expect(err).to.be.null;
                     expect(res).to.have.status(200);
                     expect(res.body).to.be.eql(newScreening);
@@ -174,6 +176,8 @@ describe("Screenings test", () => {
                 .put('/api/updateScreening/2').send({bookedSeats: ["9", "10"]})
                 .end((err, res) => {
                     res.body = JSON.parse(res.text);
+                    delete res.body.__v;
+                    delete res.body._id;
                     expect(err).to.be.null;
                     expect(res).to.have.status(200);
                     expect(res.body).to.be.eql(screening2);
