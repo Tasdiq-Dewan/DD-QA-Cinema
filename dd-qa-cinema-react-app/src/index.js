@@ -8,12 +8,12 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import Mockdata from './MockData.json'
 import BookingPage from './Pages/BookingPage';
-import BookingAxios from './Axios/Booking/ScreeningAxios';
+import PaymentAxios from './Axios/Payment/PaymentAxios';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
-    <BookingAxios/>
+    <PaymentAxios/>
   </BrowserRouter>
 );
 
