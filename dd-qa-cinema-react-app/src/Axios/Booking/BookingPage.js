@@ -4,6 +4,11 @@ import './BookingAxios.css'
 import Screening from "./ScreeningAxios";
 import { Route, Routes, Link,} from "react-router-dom";
 
+function refGen(){
+let r = (Math.random() * 9999).toString(36).substring(3);
+    return r;
+}
+
 const BookingAxios = () => {
 
     const [name, setName] = useState("")
@@ -44,19 +49,24 @@ const BookingAxios = () => {
         setAmountPpaid(e.target.value)
     }
 
-
+    const updateScreening = () => {
+        axios.put("http://localhost:8081/api/updateScreening/" + screenNumber, {
+            "bookedSeats":seats
+        }).then(result => {
+            console.log(result.data);
+        })
+    }
 
     const createBooking = (e) => {
         axios.post("http://localhost:8081/api/addBooking", {
-        "CustomerRef":1,
+        "CustomerRef": refGen(),
         "CustomerName":name,
-        "Screening":screenNumber,
         "Seats":seats,
         "AdultTickets":adultTickets,
         "ChildTickets":childTickets,
-        "TransactionRef": 'sdfsfsf',
+        "TransactionRef": 'TBD',
         "Screening": {
-            "Screening_id": 1,
+            "Screening_id": screenNumber,
             "Title" : "dbz",
             "Runtime" : 200,
             "ScreeningType ": "3d",
@@ -66,6 +76,7 @@ const BookingAxios = () => {
         }).then(result => {
             setBooking(result.data);
             console.log(result.data);
+            updateScreening();
             window.location.reload();
         })
     }
