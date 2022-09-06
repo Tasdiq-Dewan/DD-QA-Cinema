@@ -56,6 +56,33 @@ const booking2 = {
 
 chai.should();
 describe("Bookings", function() {
+    // before(function(done){
+    //     mongoose.connect("mongodb://localhost:27017/qa-cinema-test",  function(err) {
+    //         done();
+    //     });
+    // });
+    // after(function(done){
+    //     mongoose.connection.close();
+    //     done();
+    // })
+    // this.beforeEach(async () => {
+    //     await clearCollections();
+    //     await createData();
+    // })
+    // describe("GET /getAllBookings", () => {
+    //     it("Should get all the bookings", (done) => {
+    //         chai.request(app)
+    //         .get("/api/getAllBookings")
+    //         .end((err, res) => {
+    //             res.body = JSON.parse(res.text);
+    //             //delete res.body[0].__flags;
+    //             expect(err).to.be.null;
+    //             expect(res).to.have.status(200);
+    //             expect(res.body).should.be.eql([booking1]);
+    //             done();
+    //         });
+    //     });
+    // });
     before(function(done){
         mongoose.connect("mongodb://localhost:27017/qa-cinema-test",  function(err) {
             done();
@@ -68,20 +95,19 @@ describe("Bookings", function() {
     this.beforeEach(async () => {
         await clearCollections();
         await createData();
-    })
-    describe("GET /getAllBookings", () => {
-        it("Should get all the bookings", (done) => {
-            chai.request(app)
-            .get("/api/getAllBookings")
-            .end((err, res) => {
-                res.body = JSON.parse(res.text);
-                //delete res.body[0].__flags;
-                expect(err).to.be.null;
-                expect(res).to.have.status(200);
-                expect(res.body).should.be.eql([booking1]);
-                done();
-            });
-        });
+    });
+    describe("GET /", () => {
+        it("should get all bookings", (done) => {
+             chai.request(app)
+                .get('/api/getAllBookings')
+                .end((err, res) => {
+                    res.body = JSON.parse(res.text);
+                    expect(err).to.be.null;
+                    expect(res).to.have.status(200);
+                    expect(res.body).to.be.eql([booking1]);
+                    done();
+                });
+         });
     });
 })
 
@@ -89,6 +115,31 @@ describe("Bookings", function() {
 chai.should();
 
 describe("GET /getBookingByRef/:id", function(){
+    // before(function(done){
+    //     mongoose.connect("mongodb://localhost:27017/qa-cinema-test",  function(err) {
+    //         done();
+    //     });
+    // });
+    // after(function(done){
+    //     mongoose.connection.close();
+    //     done();
+    // })
+    // this.beforeEach(async () => {
+    //     await clearCollections();
+    //     await createData();
+    // })
+    // it ("Should get a booking by id 90AB223", (done) => {
+    //     chai.request(app)
+    //     .get("/api/getBookingByRef/90AB223")
+    //     .end((err, res) => {
+    //        res.body = JSON.parse(res.text);
+    //        //res.body.__flags;
+    //        expect(err).to.be.null;
+    //        expect(res).to.have.status(200);
+    //        expect(res.body).should.be.eql(booking1)
+    //        done();
+    //     })
+    // })
     before(function(done){
         mongoose.connect("mongodb://localhost:27017/qa-cinema-test",  function(err) {
             done();
@@ -101,19 +152,20 @@ describe("GET /getBookingByRef/:id", function(){
     this.beforeEach(async () => {
         await clearCollections();
         await createData();
-    })
-    it ("Should get a booking by id 90AB223", (done) => {
-        chai.request(app)
-        .get("/api/getBookingByRef/90AB223")
-        .end((err, res) => {
-           res.body = JSON.parse(res.text);
-           //res.body.__flags;
-           expect(err).to.be.null;
-           expect(res).to.have.status(200);
-           expect(res.body).should.be.eql(booking1)
-           done();
-        })
-    })
+    });
+    describe("GET /", () => {
+        it("should get booking by ref", (done) => {
+             chai.request(app)
+                .get('/api/getBookingByRef/90AB223')
+                .end((err, res) => {
+                    res.body = JSON.parse(res.text);
+                    expect(err).to.be.null;
+                    expect(res).to.have.status(200);                   
+                    expect(res.body).to.be.eql(booking1);
+                    done();
+                });
+        });
+    });
 })
 
 chai.should();
