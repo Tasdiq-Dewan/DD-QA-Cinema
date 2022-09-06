@@ -187,7 +187,7 @@ const newBooking = new BookingModel({
     AdultQuantity: 1,
     ChildQuantity: 1,
     AmountPaid: 12,
-    TransactionRef: 1239875987,
+    TransactionRef: "1239875987",
     Screening: {
         Screening_id: 4,
         Title : "The Batman",

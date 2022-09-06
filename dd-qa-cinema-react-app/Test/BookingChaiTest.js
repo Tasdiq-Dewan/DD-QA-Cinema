@@ -15,6 +15,13 @@ mongoose.connect("mongodb://localhost:27017/qa-cinema-test").then(res=>{
 });
 
 const booking1 = {
+   
+    // __flags: {
+    //     lockSsfi: [undefined],
+    //     message: [undefined],
+    //     object: [null],
+    //     ssfi: [Function]
+    // },    
     CustomerRef: "90AB223",
     CustomerName: "Andrew McCall",
     Seats: ["15", "16"],
@@ -23,13 +30,13 @@ const booking1 = {
     AdultQuantity: 1,
     ChildQuantity: 1,
     AmountPaid: 12,
-    TransactionRef: 1239875987,
+    TransactionRef: "1239875987",
     Screening: {
         Screening_id: 4,
         Title : "The Batman",
         Runtime : 200,
         ScreeningType : ["2D", "Audio Described"],
-        ScreeningTime : "2022-09-02T23:00:00Z",
+        ScreeningTime : "2022-09-02T23:00:00.000Z",
     }
 }
 
