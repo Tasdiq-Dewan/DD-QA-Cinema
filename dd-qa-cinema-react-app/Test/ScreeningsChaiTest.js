@@ -105,15 +105,15 @@ const allScreenings = [screening1, screening2, screening3, screening4];
 
 
 describe("Screenings test", function (){
-    // before(function(done){
-    //     mongoose.connect("mongodb://localhost:27017/qa-cinema-test",  function(err) {
-    //         done();
-    //     });
-    // });
-    // after(function(done){
-    //     mongoose.connection.close();
-    //     done();
-    // })
+    before(function(done){
+        mongoose.connect("mongodb://localhost:27017/qa-cinema-test",  function(err) {
+            done();
+        });
+    });
+    after(function(done){
+        mongoose.connection.close();
+        done();
+    })
     this.beforeEach(async () => {
         await clearCollections();
         await createData();

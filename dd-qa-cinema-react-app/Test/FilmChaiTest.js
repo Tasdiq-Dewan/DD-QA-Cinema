@@ -94,15 +94,15 @@ const newFilm = {
 chai.should();
 
 describe("Films", function (){
-    // before(function(done){
-    //     mongoose.connect("mongodb://localhost:27017/qa-cinema-test",  function(err) {
-    //         done();
-    //     });
-    // });
-    // after(function(done){
-    //     mongoose.connection.close();
-    //     done();
-    // })
+    before(function(done){
+        mongoose.connect("mongodb://localhost:27017/qa-cinema-test",  function(err) {
+            done();
+        });
+    });
+    after(function(done){
+        mongoose.connection.close();
+        done();
+    })
     this.beforeEach(async () => {
         await clearCollections();
         await createData();
@@ -127,6 +127,15 @@ describe("Films", function (){
 
 chai.should();
 describe("Films", function() {
+    before(function(done){
+        mongoose.connect("mongodb://localhost:27017/qa-cinema-test",  function(err) {
+            done();
+        });
+    });
+    after(function(done){
+        mongoose.connection.close();
+        done();
+    })
     this.beforeEach(async () => {
         await clearCollections();
         await createData();
@@ -151,6 +160,15 @@ describe("Films", function() {
 
 chai.should();
 describe("Films", function() {
+    before(function(done){
+        mongoose.connect("mongodb://localhost:27017/qa-cinema-test",  function(err) {
+            done();
+        });
+    });
+    after(function(done){
+        mongoose.connection.close();
+        done();
+    })
     this.beforeEach(async () => {
         await clearCollections();
         await createData();
@@ -174,6 +192,15 @@ describe("Films", function() {
 
 chai.should();
 describe("Films", function() {
+    before(function(done){
+        mongoose.connect("mongodb://localhost:27017/qa-cinema-test",  function(err) {
+            done();
+        });
+    });
+    after(function(done){
+        mongoose.connection.close();
+        done();
+    })
     this.beforeEach(async () => {
         await clearCollections();
         await createData();
@@ -193,6 +220,15 @@ it("should search for films with search term 'Batman'", (done) => {
 
 chai.should();
 describe("Films", function() {
+    before(function(done){
+        mongoose.connect("mongodb://localhost:27017/qa-cinema-test",  function(err) {
+            done();
+        });
+    });
+    after(function(done){
+        mongoose.connection.close();
+        done();
+    })
     this.beforeEach(async () => {
         await clearCollections();
         await createData();
@@ -212,11 +248,20 @@ it("should search for films with title 'The Batman'", (done) => {
 
 chai.should();
 describe("Films", function() {
+    before(function(done){
+        mongoose.connect("mongodb://localhost:27017/qa-cinema-test",  function(err) {
+            done();
+        });
+    });
+    after(function(done){
+        mongoose.connection.close();
+        done();
+    })
     this.beforeEach(async () => {
         await clearCollections();
         await createData();
     });
-    it('should respond 200', (done) => {
+    it('should respond 200 after delete', (done) => {
        chai.request(app)
       .del(`/api/deleteFilm/1`)
       .end((err, res) => {
