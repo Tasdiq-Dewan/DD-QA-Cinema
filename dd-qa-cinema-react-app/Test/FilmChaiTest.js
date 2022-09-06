@@ -215,7 +215,7 @@ describe("Films", function() {
     });
     it('should respond 200', (done) => {
        chai.request(app)
-      .del('/deleteFilm/1')
+      .del(`/api/deleteFilm/1`)
       .end((err, res) => {
         expect(err).to.be.null;
         expect(res).to.have.status(200);
