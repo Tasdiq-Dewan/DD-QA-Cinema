@@ -1,0 +1,147 @@
+.data-input {
+    width: 80%;
+    height: 180px;
+    padding: 12px 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1%;
+    box-sizing: border-box;
+    border-style: solid;
+    border-color: green;
+    border-width: 1ex;
+    text-align: justify;
+    
+    
+    
+  }
+
+.username-input {
+    width: 40%;
+    padding: 12px 20px;
+    display: block;
+    margin-bottom: 1%;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    border-style: solid;
+    border-color: green;
+    border-width: 1ex;
+    
+    
+  }
+
+.title-input {
+    width: 60%;
+    padding: 12px 20px;
+    display: block;
+    margin-bottom: 1%;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    border-style: solid;
+    border-color: green;
+    border-width: 1ex;
+    
+    
+  }
+
+  .background{
+    background-color: black;
+  }
+
+  .text{
+    font-size: 18px;   
+    font-family: 'georgia';   
+    font-weight: bold;   
+    text-align: center;
+    color: green;
+  }
+
+  .data-input:hover{
+    border-color: lightgreen;
+    background-color: white;
+    transition: 2s;
+}
+
+.title-input:hover{
+    border-color: lightgreen;
+    background-color: white;
+    transition: 2s;
+}
+
+.username-input:hover{
+    border-color: lightgreen;
+    background-color: white;
+    transition: 2s;
+}
+
+/* CSS */
+.button-56 {
+  background-color: #02481b;
+  border-radius: 100px;
+  box-shadow: rgba(162, 202, 177, 0.2) 0 -25px 18px -14px inset,rgba(237, 237, 237, 0.659) 0 1px 2px,rgba(255, 255, 255, 0.15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
+  color: rgb(222, 233, 222);
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'georgia';   
+    font-weight: bold;   
+  padding: 7px 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 250ms;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.button-56:hover {
+  box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
+  transform: scale(1.05);
+  color: rgb(112, 131, 112);
+}
+
+.discussion-Table{
+
+    border-color: green;
+    display: block;
+    margin-top: 1%;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    border-style: solid;
+    border-color: rgb(0, 59, 0);
+    border-width: 1ex;
+}
+
+.title-Text{
+    font-size: 25px;   
+    font-family: 'georgia';   
+    font-weight: bold;   
+    text-align: left;
+    color: green;
+   
+  }
+
+.user-Text{
+    font-size: 15px;   
+    font-family: 'georgia';   
+    font-weight: bold;   
+    text-align: left;
+    color: green;
+   
+  }
+
+.message-Text{
+    font-size: 21px;   
+    font-family: 'georgia';   
+    font-weight: bold;   
+    text-align: left;
+    color: green;
+   
+  }
