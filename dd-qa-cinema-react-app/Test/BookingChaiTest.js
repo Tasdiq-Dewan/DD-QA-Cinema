@@ -15,43 +15,27 @@ mongoose.connect("mongodb://localhost:27017/qa-cinema-test").then(res=>{
 });
 
 const booking1 = {
-    CustomerRef: "123XYVXXBYNG",
-    Seats: ["2"],
-    AdultPrice: 2,
-    ChildPrice: 1,
+    CustomerRef: "90AB223",
+    CustomerName: "Andrew McCall",
+    Seats: ["15", "16"],
+    AdultPrice: 7,
+    ChildPrice: 5,
     AdultQuantity: 1,
-    ChildQuantity: 2,
-    AmountPaid: 3,
-    TransactionRef: "xyz",
+    ChildQuantity: 1,
+    AmountPaid: 12,
+    TransactionRef: 1239875987,
     Screening: {
-        Screening_id: 1,
-        Title: "Dragon Ball Super: Broly",
-        Runtime: 100,
-        ScreeningType: ["2D", "3D", "Subtitle"],
-        ScreeningTime: "2022-01-01T23:28:56.782Z"
+        Screening_id: 4,
+        Title : "The Batman",
+        Runtime : 200,
+        ScreeningType : ["2D", "Audio Described"],
+        ScreeningTime : "2022-09-02T23:00:00Z",
     }
 }
 
 const booking2 = {
     CustomerRef: "123XYVXXBYqq",
-    Seats: ["4"],
-    AdultPrice: 3,
-    ChildPrice: 2,
-    AdultQuantity: 2,
-    ChildQuantity: 3,
-    AmountPaid: 4,
-    TransactionRef: "xyzhh",
-    Screening: {
-        Screening_id: 4,
-        Title: "The Batman",
-        Runtime: 200,
-        ScreeningType: ["2D", "3D", "Subtitle"],
-        ScreeningTime: "2022-01-01T23:28:56.782Z"
-    }
-}
-
-const booking3 = {
-    CustomerRef: "123XYVXXBYqq",
+    CustomerName: "Bob",
     Seats: ["4"],
     AdultPrice: 3,
     ChildPrice: 2,
@@ -71,23 +55,21 @@ const booking3 = {
 
 
 chai.should();
-describe("Bookings test", function() {
+describe("Bookings", function() {
     this.beforeEach(async () => {
         await clearCollections();
         await createData();
     })
-})
-describe("Bookings", function() {
     describe("GET /getAllBookings", () => {
         it("Should get all the bookings", (done) => {
             chai.request(app)
             .get("/api/getAllBookings")
             .end((err, res) => {
                 res.body = JSON.parse(res.text);
-                //expect(err).to.be.null;
+                //delete res.body[0].__flags;
                 expect(err).to.be.null;
                 expect(res).to.have.status(200);
-                expect(res).body.should.be.a("array")
+                expect(res.body).should.be.eql([booking1]);
                 done();
             });
         });
@@ -96,45 +78,41 @@ describe("Bookings", function() {
 
 // get booking by id 
 chai.should();
-describe("Booking test id", function() {
+
+describe("GET /getBookingByRef/:id", function(){
     this.beforeEach(async () => {
         await clearCollections();
         await createData();
     })
-})
-
-describe("GET /getBookingByRef/:id", () => {
     it ("Should get a booking by id", (done) => {
         chai.request(app)
-        .get("/api//getBookingByRef/:id")
+        .get("/api//getBookingByRef/1")
         .end((err, res) => {
            res.body = JSON.parse(res.text);
+           //delete res.body.__flags;
            expect(err).to.be.null;
            expect(res).to.have.status(200);
-           expect(res).body.should.be.a(booking1)
+           expect(res.body).should.be.eql(booking1)
            done();
         })
     })
 })
 
 chai.should();
-describe("Booking test id", function() {
+
+describe("POST /", function(){
     this.beforeEach(async () => {
         await clearCollections();
         await createData();
     })
-})
-
-
-describe("POST /", () => {
     it("Should create a new booking for a film", (done) => {
         chai.request(app)
         .post("/api/addBooking").send(booking2)
         .end((err, res) => {
             res.body = JSON.parse(res.text);
             delete res.body.__v;
-            delete res.body.__id;
-            expect(err).to.be(null);
+            delete res.body._id;
+            expect(err).to.be.null;
             expect(res).to.have.status(200);
             expect(res.body).to.be.eql(booking2);
             done();
@@ -143,22 +121,21 @@ describe("POST /", () => {
 })
 
 chai.should();
-describe("Booking test id", function() {
+
+
+describe("/DELETE/:id", function(){
     this.beforeEach(async () => {
         await clearCollections();
         await createData();
     })
-})
-
-describe("/DELETE/:id", () => {
     it("It should delete a booking given id", (done) => {
         chai.request(app)
-        .delete("/deleteBooking/:id").send(booking3)
+        .delete("/api/deleteBooking/1")
         .end((err, res) => {
             res.body = JSON.parse(res.text);
-            expect(err).to.be(null);
+            expect(err).to.be.null;
             expect(res).to.have.status(200);
-            expect(res.body).should.be.a(booking3);
+            expect(res.body).to.be.eql({"acknowledged":true,"deletedCount":1})
             done();
         })
     })

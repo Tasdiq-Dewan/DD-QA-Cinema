@@ -86,7 +86,7 @@ async function saveFilms(){
     await newFilm3.save();
     await newFilm4.save();
     await newFilm5.save();
-    console.log("All films saved", newFilm1, newFilm2, newFilm3, newFilm4, newFilm5);
+    //console.log("All films saved", newFilm1, newFilm2, newFilm3, newFilm4, newFilm5);
 }
 
 //saveFilms();
@@ -171,7 +171,7 @@ async function saveScreenings(){
     await newScreening2.save();
     await newScreening3.save();
     await newScreening4.save();
-    console.log("All screenings saved", newScreening1, newScreening2, newScreening3, newScreening4);
+    //console.log("All screenings saved", newScreening1, newScreening2, newScreening3, newScreening4);
 }
 
 //saveScreenings();
@@ -200,7 +200,7 @@ const newBooking = new BookingModel({
 async function saveBookings(){
     newBooking.isNew = true;
     await newBooking.save();
-    console.log("All bookings saved", newBooking);
+    //console.log("All bookings saved", newBooking);
 }
 
 //saveBookings();
@@ -230,7 +230,7 @@ async function saveDiscussions(){
     
     await newPost1.save();
     await newPost2.save();
-    console.log("All discussions saved", newPost1, newPost2);
+    //console.log("All discussions saved", newPost1, newPost2);
 }
 
 //saveDiscussions();
