@@ -8,7 +8,7 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import Mockdata from './MockData.json'
 import BookingPage from './Pages/BookingPage';
-import BookingAxios from './Axios/Booking/BookingAxios';
+import BookingAxios from './Axios/Booking/ScreeningAxios';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

@@ -1,6 +1,8 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import './BookingAxios.css'
+import Screening from "./ScreeningAxios";
+import { Route, Routes, Link,} from "react-router-dom";
 
 const BookingAxios = () => {
 
@@ -10,7 +12,6 @@ const BookingAxios = () => {
     const [adultTickets, setAdultTickets] = useState(1)
     const [childTickets, setChildTickets] = useState(0)
     const [amountPaid, setAmountPpaid] = useState(0)
-    const [screenings, getScreenings] = useState([])
     const [booking, setBooking] = useState([])
 
     const [showForm, setShowForm] = useState(false);
@@ -44,12 +45,6 @@ const BookingAxios = () => {
     }
 
 
-    useEffect(() => {
-        axios.get("http://localhost:8081/api/getAllScreenings").then(result => {
-            getScreenings(result.data);
-        })
-    }, []);
-
 
     const createBooking = (e) => {
         axios.post("http://localhost:8081/api/addBooking", {
@@ -78,8 +73,7 @@ const BookingAxios = () => {
     
     return(
         <>
-        
-            <form className='booking-form'>
+                <form>
                 <p><label for="screening_id">Screen number:</label></p>
                 <p><input tpye="number" id="screening_id" placeholder="Enter screen number" onChange={e => getScreen(e)}></input></p>
                 <p><label for="name"><b>Name:</b></label></p>
@@ -91,10 +85,12 @@ const BookingAxios = () => {
                 <p><label for="seats"><b>Seats:</b></label></p>
                 <p><input type="text" id="seats" placeholder="e.g. 3, 4, 5...." required onChange={e => getSeats(e)} /></p>
                 <button onClick={e => createBooking(e)}>book!</button>
-            </form>
+            </form> 
         
-        </>
+            </> 
+      
+      
     )
 }
 
-
+export default BookingAxios;

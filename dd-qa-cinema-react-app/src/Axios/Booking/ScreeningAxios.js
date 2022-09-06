@@ -1,9 +1,9 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import './BookingAxios.css'
-import { Link } from "react-router-dom";
-
-const BookingAxios = () => {
+import { Route, Routes, Link,} from "react-router-dom";
+import Booking from "./BookingPage";
+const ScreeningAxios = () => {
 
     const [name, setName] = useState("")
     const [seats, setSeats] = useState([])
@@ -80,13 +80,22 @@ const BookingAxios = () => {
     return(
         <>
             <h1>Screenings</h1>
-
+            <div className="bookingPageContainer">   
+            <Link to='/BookingPage' className="bookingPage"><h4>Booking</h4></Link>
+                   <Routes>
+                   <Route path="/BookingPage" element = {<Booking />}>
+                   </Route>
+                   </Routes>
+                   </div>
             <div className="Screening-container"> 
-            {screenings.map(screening =>{
+            {screenings.map((screening, key) =>{
                 return(
+                    
                 <div className="screening-row">
-                   <Link to='/bookingPage'> <img src={screening.Film.Poster} /> </Link>
-                    <div className="screen-text">
+        
+               
+                    <img src={screening.Film.Poster} /> 
+               
                         <h4>{screening.Title}</h4>
                         <p>
                         Screen number: {screening.Screening_id}<br></br>
@@ -94,33 +103,16 @@ const BookingAxios = () => {
                         Screening Type: {screening.ScreeningType}, <br></br>
                         Screen Time: {screening.ScreeningTime}<br></br>
                         </p>
-                    </div>
+                        
+               
                 </div>
                 )
             })}
+          
             </div>
-            <button onClick={getForm}>Click To book!</button>
-            {showForm && (
-                <form className='booking-form'>
-                        <p><label for="screening_id">Screen number:</label></p>
-                        <p><input tpye="number" id="screening_id" placeholder="Enter screen number" onChange={e => getScreen(e)}></input></p>
-                        <p><label for="name"><b>Name:</b></label></p>
-                        <p><input type="text" id="name" placeholder="Enter name" required onChange={e => getName(e)}/></p>
-                        <p><label for="adultQuantity"><b>Adult tickets:</b></label></p>
-                        <p><input type="number" id="adultQuantity" placeholder="Enter number of tickets" required onChange={e => getAdultTickets(e)}/></p>
-                        <p><label for="childQuantity"><b>Child tickets:</b></label></p>
-                        <p><input type="number" id="childQuantity" placeholder="Enter number of tickets" required onChange={e => getChildTickets(e)} /></p>
-                        <p><label for="seats"><b>Seats:</b></label></p>
-                        <p><input type="text" id="seats" placeholder="e.g. 3, 4, 5...." required onChange={e => getSeats(e)} /></p>
-                        <button onClick={e => createBooking(e)}>book!</button>
-                </form>
-            )}
         </>
     )
   
+            }
 
-
-
-}
-
-export default BookingAxios
+export default ScreeningAxios;
