@@ -3,12 +3,11 @@ import './BookingPage.css'
 
 function BookingPage({data}){
 
+    const [showForm, setShowForm] = useState(false);
 
-        const [showForm, setShowForm] = useState(false);
-
-        const showForm1 = () => {
-            setShowForm(!showForm);
-        }
+    const getForm = () => {
+        setShowForm(!showForm);
+      }
 
 
 
@@ -31,7 +30,7 @@ function BookingPage({data}){
                         <h5>Screening Type: {value.ScreeningType}</h5>
                         <h5>Screen Time: {value.ScreeningTime}</h5>
                     </div>
-                    <button type="button" onClick={showForm1} >Book now</button>
+                    <button type="button" onClick={getForm} >Book now</button>
                 </div>
                 )
             
