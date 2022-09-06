@@ -3,6 +3,10 @@ import { useEffect, useState } from "react";
 import "./DiscussionAxios.css";
 import Filter from 'bad-words';
 
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+  }
+
 const PostDiscussion = () =>{
     const [userPost, setPost] = useState([]);
     const [User, setUser] = useState("Anonymous");
@@ -30,7 +34,7 @@ const PostDiscussion = () =>{
         }
         else{
         axios.post("http://localhost:8081/api/addDiscussionPost", {
-        "Post_id":97,
+        "Post_id":getRandomInt(9996999999),
         "Username":User,
         "PostTitle":Title,
         "PostMessage":Message

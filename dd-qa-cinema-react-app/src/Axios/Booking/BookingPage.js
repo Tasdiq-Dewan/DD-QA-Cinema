@@ -66,7 +66,7 @@ const BookingAxios = () => {
         }).then(result => {
             setBooking(result.data);
             console.log(result.data);
-            //window.location.reload();
+            window.location.reload();
         })
     }
 
