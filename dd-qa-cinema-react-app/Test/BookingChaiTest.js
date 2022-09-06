@@ -3,7 +3,8 @@ const chaiHttp = require("chai-http");
 const mongoose = require("mongoose");
 chai.use(chaiHttp);
 const app = require("./TestAPICall.js");
-const {createData, clearCollections} = require("../src/TestInit.js")
+const {createData, clearCollections} = require("../src/TestInit.js");
+const { expect } = require("chai");
 //const expect = chai.expect;
 
 mongoose.connect("mongodb://localhost:27017/qa-cinema-test").then(res=>{
@@ -83,6 +84,7 @@ describe("Bookings", function() {
             .get("/api/getAllBookings")
             .end((err, res) => {
                 res.body = JSON.parse(res.text);
+                //expect(err).to.be.null;
                 expect(err).to.be.null;
                 expect(res).to.have.status(200);
                 expect(res).body.should.be.a("array")
@@ -107,7 +109,7 @@ describe("GET /getBookingByRef/:id", () => {
         .get("/api//getBookingByRef/:id")
         .end((err, res) => {
            res.body = JSON.parse(res.text);
-           expect(err).to.be(null);
+           expect(err).to.be.null;
            expect(res).to.have.status(200);
            expect(res).body.should.be.a(booking1)
            done();
