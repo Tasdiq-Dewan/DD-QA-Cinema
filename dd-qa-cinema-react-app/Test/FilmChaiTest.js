@@ -6,13 +6,6 @@ const expect = chai.expect;
 const {createData, clearCollections} = require("../src/TestInit.js")
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb://localhost:27017/qa-cinema-test").then(res=>{
-    console.log("connected to test db");
-}).catch(err => {
-    console.log(errMessage);
-    console.log(err);
-});
-
 
 const film1 = {
     Film_id: '1',
@@ -25,8 +18,18 @@ const film1 = {
 }
 
 chai.should();
-describe("Films", function (){
+chai.should();
 
+describe("Films", function (){
+    before(function(done){
+        mongoose.connect("mongodb://localhost:27017/qa-cinema-test",  function(err) {
+            done();
+        });
+    });
+    after(function(done){
+        mongoose.connection.close();
+        done();
+    })
     this.beforeEach(async () => {
         await clearCollections();
         await createData();
