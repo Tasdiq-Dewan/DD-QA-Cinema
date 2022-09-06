@@ -199,13 +199,12 @@ BookingModel.deleteMany({}).then(result =>{
 
 const newBooking = new BookingModel({
     CustomerRef: "90AB223",
+    CustomerName:"Andrew",
     Seats: ["15", "16"],
-    Tickets : {
-        AdultPrice: 7,
-        ChildPrice: 5,
-        AdultQuantity: 1,
-        ChildQuantity: 1
-    },
+    AdultPrice: 7,
+    ChildPrice: 5,
+    AdultQuantity: 1,
+    ChildQuantity: 1,
     AmountPaid: 12,
     TransactionRef: 1239875987,
     Screening: {
