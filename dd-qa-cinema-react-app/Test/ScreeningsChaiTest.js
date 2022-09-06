@@ -4,8 +4,15 @@ chai.use(chaiHttp);
 const app = require("./TestAPICall.js");
 const expect = chai.expect;
 const mongoose = require("mongoose");
-const { beforeEach } = require('mocha');
 const {createData, clearCollections} = require("../src/TestInit.js")
+
+mongoose.connect("mongodb://localhost:27017/qa-cinema-test").then(res=>{
+    console.log("connected to test db");
+}).catch(err => {
+    console.log(errMessage);
+    console.log(err);
+});
+
 
 
 const screening1 = {
@@ -104,7 +111,6 @@ const allScreenings = [screening1, screening2, screening3, screening4];
 
 chai.should();
 describe("Screenings test", function (){
-
     this.beforeEach(async () => {
         await clearCollections();
         await createData();
