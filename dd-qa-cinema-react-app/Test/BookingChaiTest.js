@@ -14,14 +14,7 @@ mongoose.connect("mongodb://localhost:27017/qa-cinema-test").then(res=>{
     console.log(err);
 });
 
-const booking1 = {
-   
-    // __flags: {
-    //     lockSsfi: [undefined],
-    //     message: [undefined],
-    //     object: [null],
-    //     ssfi: [Function]
-    // },    
+const booking1 = {  
     CustomerRef: "90AB223",
     CustomerName: "Andrew McCall",
     Seats: ["15", "16"],
@@ -109,9 +102,9 @@ describe("GET /getBookingByRef/:id", function(){
         await clearCollections();
         await createData();
     })
-    it ("Should get a booking by id", (done) => {
+    it ("Should get a booking by id 90AB223", (done) => {
         chai.request(app)
-        .get("/api//getBookingByRef/1")
+        .get("/api/getBookingByRef/90AB223")
         .end((err, res) => {
            res.body = JSON.parse(res.text);
            //res.body.__flags;
@@ -173,7 +166,7 @@ describe("/DELETE/:id", function(){
     })
     it("It should delete a booking given id", (done) => {
         chai.request(app)
-        .delete("/api/deleteBooking/1")
+        .delete("/api/deleteBooking/90AB223")
         .end((err, res) => {
             res.body = JSON.parse(res.text);
             expect(err).to.be.null;
