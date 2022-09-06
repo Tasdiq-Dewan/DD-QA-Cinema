@@ -3,13 +3,16 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import Post from './Axios/Discussions/DiscussionsAxios'
+import Booking from './components/Booking/Booking';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
+import Mockdata from './MockData.json'
+import BookingPage from './Pages/BookingPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
-    <Post/>
+    <BookingPage data={Mockdata}/>
   </BrowserRouter>
 );
 
