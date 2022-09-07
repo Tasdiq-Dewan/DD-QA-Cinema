@@ -10,15 +10,16 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Mockdata from './MockData.json'
 import BookingPage from './Pages/BookingPage';
 import ScreeningAxios from './Axios/Booking/ScreeningAxios';
+import BookingAxios from './Axios/Booking/BookingPage';
+import PaymentForm from './Axios/Payment/PaymentForm';
+import PaymentAxios from './Axios/Payment/PaymentAxios';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
     <ScreeningAxios/>
+   <App/>
   </BrowserRouter>
-);
+)
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();

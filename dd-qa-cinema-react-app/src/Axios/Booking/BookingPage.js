@@ -2,8 +2,8 @@ import axios from "axios";
 import { useState } from "react";
 import './BookingAxios.css'
 import Screening from "./ScreeningAxios";
-import PaymentForm from "../"
 import { Route, Routes, Link, useLocation} from "react-router-dom";
+import PaymentForm from "../Payment/PaymentForm";
 
 function refGen(){
 let r = (Math.random() * 9999).toString(36).substring(3);
@@ -59,14 +59,17 @@ const BookingAxios = () => {
     }
     console.log(screening.Screening_id);
 
+
+
     const createBooking = (e) => {
         axios.post("http://localhost:8081/api/addBooking", {
-        "CustomerRef": refGen(),
+        "CustomerRef":1,
         "CustomerName":name,
+        "Screening":screenNumber,
         "Seats":seats,
         "AdultTickets":adultTickets,
         "ChildTickets":childTickets,
-        "TransactionRef": 'TBD',
+        "TransactionRef": 'sdfsfsf',
         "Screening": {
             "Screening_id": screening.Screening_id,
             "Title" : screening.Title,
@@ -80,6 +83,7 @@ const BookingAxios = () => {
             console.log(result.data);
             updateScreening();
             <Screening/>
+            //window.location.reload();
         })
  
     }
@@ -96,12 +100,16 @@ const BookingAxios = () => {
                 <p><input type="number" id="childQuantity" placeholder="Enter number of tickets" required onChange={e => getChildTickets(e)} /></p>
                 <p><label for="seats"><b>Seats:</b></label></p>
                 <p><input type="text" id="seats" placeholder="e.g. 3, 4, 5...." required onChange={e => getSeats(e)} /></p>
-                <PaymentForm name={"batman"} bookingPrice={100} ><button onClick={e => createBooking(e)}>book!</button></PaymentForm>
-                <button onClick={e => createBooking(e)}>book!</button>
-            </form> 
+                {/* <button onClick={e => createBooking(e)}>book!</button> */}
         
+
+                <PaymentForm name={"batman"} bookingPrice={100} ><button onClick={e => createBooking(e)}>book!</button></PaymentForm>
+            </form> 
+
+
+           
             </> 
-      
+
       
     )
 }
