@@ -14,10 +14,8 @@ const BookingAxios = () => {
     const location = useLocation();
     const [name, setName] = useState("")
     const [seats, setSeats] = useState([])
-    //const [screening, setScreening] = useState();
     const [adultTickets, setAdultTickets] = useState(1)
     const [childTickets, setChildTickets] = useState(0)
-    const [amountPaid, setAmountPpaid] = useState(0)
     const [booking, setBooking] = useState([])
     const [showForm, setShowForm] = useState(false);
 
@@ -29,10 +27,6 @@ const BookingAxios = () => {
     const getName = (e) => {
         setName(e.target.value)
     }
-
-    // const getScreen = () => {
-    //     setScreening(props.screening.Screening_id)
-    // }
     
     const getSeats = (e) =>{
         setSeats(e.target.value)
@@ -46,9 +40,8 @@ const BookingAxios = () => {
         setChildTickets(e.target.value)
     }
 
-    const getAmountPaid = (e) =>{
-        setAmountPpaid(e.target.value)
-    }
+    const TotalPrice = ((adultTickets*7) + (childTickets*5));
+
     
     const updateScreening = () => {
         axios.put("http://localhost:8081/api/updateScreening/" + screening.Screening_id, {
@@ -62,10 +55,11 @@ const BookingAxios = () => {
 
 
     const createBooking = (e) => {
+        e.preventDefault();
         axios.post("http://localhost:8081/api/addBooking", {
-        "CustomerRef":1,
+        "CustomerRef":refGen(),
         "CustomerName":name,
-        "Screening":screenNumber,
+        "Screening":screening.Screening_id,
         "Seats":seats,
         "AdultTickets":adultTickets,
         "ChildTickets":childTickets,
@@ -77,12 +71,11 @@ const BookingAxios = () => {
             "ScreeningType": screening.ScreeningType,
            "ScreeningTime" : screening.ScreeningTime,
         },
-        "AmountPaid": (adultTickets*7) + (childTickets*5)
+        "AmountPaid": TotalPrice
         }).then(result => {
             setBooking(result.data);
             console.log(result.data);
             updateScreening();
-            <Screening/>
             //window.location.reload();
         })
  
@@ -101,9 +94,10 @@ const BookingAxios = () => {
                 <p><label for="seats"><b>Seats:</b></label></p>
                 <p><input type="text" id="seats" placeholder="e.g. 3, 4, 5...." required onChange={e => getSeats(e)} /></p>
                 {/* <button onClick={e => createBooking(e)}>book!</button> */}
-        
-
-                <PaymentForm name={"batman"} bookingPrice={100} ><button onClick={e => createBooking(e)}>book!</button></PaymentForm>
+                
+                <PaymentForm Title={screening.Title} bookingPrice={TotalPrice} createBooking={createBooking} name={name} screen={screening} seats={seats} adult={adultTickets}
+                childs={childTickets} ><button>dd</button></PaymentForm>
+                
             </form> 
 
 
