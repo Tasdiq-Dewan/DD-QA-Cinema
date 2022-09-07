@@ -20,6 +20,7 @@ const center = {
 };
 
 function GettingThere() {
+
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
     googleMapsApiKey: "AIzaSyBUodBtyw5yAUwjFxQLsaMaxYa_tIqAg-U"
@@ -60,7 +61,7 @@ function GettingThere() {
       <h3 className ='text'>Parking</h3>
       <p className ='text2'>We have parking, it is £2 for 6 hours and can be subsidised off your ticket. Please ask inside to one of staff members for more information.</p>
                     <h3 className ='text'>Tube/Train</h3><p className ='text2'>Fenchurch Street (5 minute walk), London Bridge (15 minute walk), Liverpool Street (15 minute walk)</p>
-                    <img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Tower_Bridge_from_Shad_Thames.jpg/1200px-Tower_Bridge_from_Shad_Thames.jpg" alt =''/>
+                    <img src = "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Tower_Bridge_from_Shad_Thames.jpg/1200px-Tower_Bridge_from_Shad_Thames.jpg" alt ='d'/>
                     <h1 className ='text'>Places to go</h1><p>We are based in a fantastic area in London just near the Tower Bridge. Once you have visited us, there are multitude of areas that you can visit after.
                         There are places like the Tower Bridge, the Tower of London and the London eye.You are sure to be in for some fantastic views.</p>
                         <h2 className ='text'>Gym</h2>

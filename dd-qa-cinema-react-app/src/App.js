@@ -8,10 +8,15 @@ import Classification from './Pages/Classification'
 import About from './Pages/About'
 import ScreeningAxios from './Axios/Booking/ScreeningAxios'
 import Booking from './Axios/Booking/BookingPage'
+import { GoogleMap, useJsApiLoader, MarkerF } from '@react-google-maps/api';
+import Discussion from './Axios/Discussions/DiscussionsAxios';
 
 
 
 function App() {
+
+
+
   return (
     <>
     <Router>
@@ -24,6 +29,7 @@ function App() {
         <Route path="/about" element={<About/>} />
         <Route path="/screenings" element={<ScreeningAxios/>} />
         <Route path="screenings/BookingPage" element = {<Booking />}/>
+        <Route path="/discussion" element = {<Discussion />}/>
       </Routes>
       <Footer/>
     </Router>

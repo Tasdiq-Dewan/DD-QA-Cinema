@@ -18,5 +18,10 @@ export const MenuItems = [
         title: "Screenings",
         url: "/screenings",
         cName: "nav-links"
+    },
+    {
+        title: "Discussion",
+        url: "/discussion",
+        cName: "nav-links"
     }
 ]
