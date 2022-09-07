@@ -1,0 +1,25 @@
+.screening-row{
+    display: static;
+    width: 20%;
+    height: 30%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+img{
+    width: 40%;
+    height: 60%;
+    margin-left: 5px;
+    margin-right: 5px;
+    display: static;
+}
+.bookingPage {
+    text-decoration: none;
+    position: sticky;
+
+}
+.bookingPageContainer{
+    margin-left: 0%;
+    margin-right: 0%;
+}

@@ -1,0 +1,41 @@
+body{
+    background-color: #242424;
+    animation: fadeIn 5s infinite linear;
+}
+@keyframes fadeIn {
+    from {background-color: #242424 }
+    50%{background-color:#474343 }
+    to{background-color: #242424 }
+}
+.bodyContainer{
+    color: white;
+    display:block;
+    text-align: center;
+    margin: 10px;
+    font-size: 14px;
+
+}
+table{
+    width: 100%;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: solid;
+    border-color: #30d456;
+
+}
+img{
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 70px;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+a:hover{
+    color: #30d456;
+    transition: 0.5s;
+}

@@ -105,6 +105,10 @@
   transform: scale(1.05);
   color: rgb(112, 131, 112);
 }
+.button-56:active{
+  transform: translateY(5px);
+  transition: 0.3s;
+}
 
 .discussion-Table{
 
