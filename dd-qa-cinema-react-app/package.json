@@ -26,7 +26,8 @@
     "test-mocha": "mocha Test",
     "eject": "react-scripts eject",
     "connect": "node ./src/API/APICall.js",
-    "reset-db": "node ./src/API/Schema/Init.js"
+    "reset-db": "node ./src/API/Schema/Init.js",
+    "coverage": "nyc npm run test-mocha"
   },
   "eslintConfig": {
     "extends": [
@@ -45,5 +46,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "nyc": "^15.1.0"
   }
 }
