@@ -1,4 +1,4 @@
-body{
+/*body{
     background-color: #242424;
     animation: fadeIn 5s infinite linear;
 }
@@ -6,7 +6,7 @@ body{
     from {background-color: #242424 }
     50%{background-color:#474343 }
     to{background-color: #242424 }
-}
+}*/
 .bodyContainer{
     color: white;
     display:block;
