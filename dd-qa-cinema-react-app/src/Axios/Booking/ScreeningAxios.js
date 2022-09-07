@@ -50,32 +50,6 @@ const ScreeningAxios = () => {
             getScreenings(result.data);
         })
     }, []);
-
-
-    const createBooking = (e) => {
-        axios.post("http://localhost:8081/api/addBooking", {
-        "CustomerRef":1,
-        "CustomerName":name,
-        "Screening":screenNumber,
-        "Seats":seats,
-        "AdultTickets":adultTickets,
-        "ChildTickets":childTickets,
-        "TransactionRef": 'sdfsfsf',
-        "Screening": {
-            "Screening_id": 1,
-            "Title" : "dbz",
-            "Runtime" : 200,
-            "ScreeningType ": "3d",
-           "ScreeningTime" : 200,
-        },
-        "AmountPaid": (adultTickets*7) + (childTickets*5)
-        }).then(result => {
-            setBooking(result.data);
-            console.log(result.data);
-            //window.location.reload();
-        })
-    }
-
     
     return(
         <>
@@ -102,6 +76,7 @@ const ScreeningAxios = () => {
                         Runtime: {screening.Runtime}<br></br>
                         Screening Type: {screening.ScreeningType}, <br></br>
                         Screen Time: {screening.ScreeningTime}<br></br>
+                        Screen Seats: {screening.AvailableSeats}
                         </p>
                         
                

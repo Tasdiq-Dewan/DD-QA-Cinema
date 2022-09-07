@@ -3,6 +3,7 @@ import { useState } from "react";
 import './BookingAxios.css'
 import Screening from "./ScreeningAxios";
 import { Route, Routes, Link,} from "react-router-dom";
+import PaymentForm from "../Payment/PaymentForm";
 
 const BookingAxios = () => {
 
@@ -73,7 +74,7 @@ const BookingAxios = () => {
     
     return(
         <>
-                <form>
+            <form>
                 <p><label for="screening_id">Screen number:</label></p>
                 <p><input tpye="number" id="screening_id" placeholder="Enter screen number" onChange={e => getScreen(e)}></input></p>
                 <p><label for="name"><b>Name:</b></label></p>
@@ -84,11 +85,15 @@ const BookingAxios = () => {
                 <p><input type="number" id="childQuantity" placeholder="Enter number of tickets" required onChange={e => getChildTickets(e)} /></p>
                 <p><label for="seats"><b>Seats:</b></label></p>
                 <p><input type="text" id="seats" placeholder="e.g. 3, 4, 5...." required onChange={e => getSeats(e)} /></p>
-                <button onClick={e => createBooking(e)}>book!</button>
-            </form> 
         
+
+                <PaymentForm name={"batman"} bookingPrice={100} ><button onClick={e => createBooking(e)}>book!</button></PaymentForm>
+            </form> 
+
+
+           
             </> 
-      
+
       
     )
 }
