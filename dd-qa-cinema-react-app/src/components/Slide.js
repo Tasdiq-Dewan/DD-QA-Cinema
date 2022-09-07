@@ -2,11 +2,13 @@ import Carousel from 'react-bootstrap/Carousel';
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Slide.css'
+import { Link } from 'react-router-dom'
 
 
 function Slide() {
   return (
-    <Carousel>
+    <>
+    <Carousel >
 
       <Carousel.Item>
         <img
@@ -14,9 +16,9 @@ function Slide() {
           src="https://images.hdqwalls.com/wallpapers/the-dark-knight-aftermath-4k-yk.jpg"
           alt="First slide"
         />
-        <Carousel.Caption>
-          <button className='booking-btn'>See Bookings Now!</button>
-        </Carousel.Caption>
+       <Carousel.Caption>
+          <Link to="/screenings"><button className='booking-btn' href="/screenings">See Bookings Now!</button> </Link>
+       </Carousel.Caption> 
       </Carousel.Item>
 
       <Carousel.Item>
@@ -26,8 +28,9 @@ function Slide() {
           alt="Second slide"
         />
         <Carousel.Caption>
-          <button className='booking-btn'>See Bookings Now!</button>
-        </Carousel.Caption>
+          <Link to="/screenings"><button className='booking-btn' href="/screenings">See Bookings Now!</button> </Link>
+       </Carousel.Caption> 
+      
       </Carousel.Item>
       
       <Carousel.Item>
@@ -36,9 +39,9 @@ function Slide() {
           src="https://images2.alphacoders.com/674/674470.jpg"
           alt="Third slide"
         />
-        <Carousel.Caption>
-          <button className='booking-btn'>See Bookings Now!</button>
-        </Carousel.Caption>
+       <Carousel.Caption>
+          <Link to="/screenings"><button className='booking-btn' href="/screenings">See Bookings Now!</button> </Link>
+       </Carousel.Caption> 
       </Carousel.Item>
 
       <Carousel.Item>
@@ -48,13 +51,12 @@ function Slide() {
           alt="Fourth slide"
         />
         <Carousel.Caption>
-          <button className='booking-btn'>See Bookings Now!</button>
-        </Carousel.Caption>
+          <Link to="/screenings"><button className='booking-btn' href="/screenings">See Bookings Now!</button> </Link>
+       </Carousel.Caption> 
       </Carousel.Item>
 
-    
-
     </Carousel>
+  </>
   );
 }
 
