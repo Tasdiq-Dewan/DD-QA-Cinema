@@ -25,7 +25,7 @@ function App() {
         <Route path ="/classification" element={<Classification/>} />
         <Route path="/about" element={<About/>} />
         <Route path="/screenings" element={<ScreeningAxios/>} />
-        <Route path="screenings/BookingPage" element = {<Booking />}/>
+        <Route path="/BookingPage" element = {<Booking />}/>
       </Routes>
       <Footer/>
     </Router>

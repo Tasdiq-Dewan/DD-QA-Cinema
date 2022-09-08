@@ -93,6 +93,8 @@ const BookingAxios = () => {
     
     return(
         <>
+
+                <img className="movie-img" src={screening.Film.Poster}></img>
                 <div>
                 <p><label for="name"><b>Name:</b></label></p>
                 <p><input type="text" id="name" placeholder="Enter name" required onChange={e => getName(e)}/></p>
@@ -105,15 +107,15 @@ const BookingAxios = () => {
 
                  <div>           
             <StripeCheckout 
+            className="payment-btn" 
             stripeKey="pk_test_51Lf1fEJZZzPMafliFZgLMTzCZW3hv9V2Ictygbq67I1k0wtbop770IBt5lgVuQUSsUY9xeJqqFhaTfvOSqF4lJOk009grTvVva"
             token={handleToken}
             name={screening.Title}
             amount={TotalPrice * 100} 
             currency="GBP"
             image={screening.Film.Poster}
-            >
+             > <button className="payment-btn">Pay</button>
             </StripeCheckout> 
-            <img src={screening.Film.Poster}></img>
                 </div>
 
             </div> 

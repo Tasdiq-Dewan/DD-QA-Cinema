@@ -60,7 +60,7 @@ const SearchFilm = () =>{
             {
             film.map(film =>(
                 
-                <a key={film.id} href="/" className = 'data-item' >
+                <a key={film.id} href={film.Url} className = 'data-item' >
                     <div className = 'film-title'>
                 <h4>{film.Title}</h4>
                 <p>{film.Synopsis}<p>{film.Classification}</p></p>

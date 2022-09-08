@@ -1,8 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import './BookingAxios.css'
-import { Route, Routes, Link,} from "react-router-dom";
-import Booking from "./BookingPage";
+import './ScreeningAxios.css'
+import { Link,} from "react-router-dom";
+
 const ScreeningAxios = () => {
 
     const [name, setName] = useState("")
@@ -55,7 +55,7 @@ const ScreeningAxios = () => {
 
         <>
                    
-            <h1>Screenings</h1>
+            <h1 className="title">Screenings</h1>
             <div className="bookingPageContainer">   
     
             </div>
@@ -68,15 +68,14 @@ const ScreeningAxios = () => {
 
 
                     <img src={screening.Film.Poster} /> 
-                    <Link to="/BookingPage" state={{screening}}>Book</Link>
+                    <Link to="/BookingPage" state={{screening}}><button className="book-btn">book</button></Link>
 
                         <h4>{screening.Title}</h4>
                         <p>
                         Screen number: {screening.Screening_id}<br></br>
-                        Runtime: {screening.Runtime}<br></br>
                         Screening Type: {screening.ScreeningType}, <br></br>
                         Screen Time: {screening.ScreeningTime}<br></br>
-                        Screen Seats: {screening.AvailableSeats}
+                        Available Seats: {screening.AvailableSeats}
                         </p>    
                 </div>
                 )

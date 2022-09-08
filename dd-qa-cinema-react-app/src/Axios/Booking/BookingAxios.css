@@ -23,3 +23,22 @@ img{
     margin-left: 0%;
     margin-right: 0%;
 }
+
+.payment-btn{
+    margin-left:auto;
+    margin-right:auto;
+    cursor: pointer;
+}
+
+.payment-btn:hover{
+    color: #30d456;
+    transition: 0.4s;
+    size: 5%;
+}
+
+.movie-img{
+    margin-left:auto;
+    margin-right:auto;
+    width: 20%;
+    height: 10%;
+}
