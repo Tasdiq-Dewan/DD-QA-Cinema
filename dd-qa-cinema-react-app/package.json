@@ -25,8 +25,11 @@
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.34.2",
     "react-icons": "^4.4.0",
+    "react-router": "^6.3.0",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
+    "react-stripe": "^0.1.0",
+    "react-stripe-checkout": "^2.6.3",
     "reactstrap": "^9.1.4",
     "web-vitals": "^2.1.4"
   },

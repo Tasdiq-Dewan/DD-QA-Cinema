@@ -76,7 +76,7 @@ const ScreeningAxios = () => {
                         Runtime: {screening.Runtime}<br></br>
                         Screening Type: {screening.ScreeningType}, <br></br>
                         Screen Time: {screening.ScreeningTime}<br></br>
-                        Screen Seats: {screening.AvailableSeats}
+                        Screen Seats: {screening.AvailableSeats.map((seat, key) => ({seat}))}
                         </p>
                         
                

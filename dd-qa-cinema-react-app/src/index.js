@@ -12,11 +12,13 @@ import BookingPage from './Pages/BookingPage';
 import BookingAxios from './Axios/Booking/BookingPage';
 import PaymentForm from './Axios/Payment/PaymentForm';
 import PaymentAxios from './Axios/Payment/PaymentAxios';
+import ScreeningAxios from './Axios/Booking/ScreeningAxios';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
-   <App/>
+   {/* <App/> */}
+    <ScreeningAxios/>
   </BrowserRouter>
 )
 
