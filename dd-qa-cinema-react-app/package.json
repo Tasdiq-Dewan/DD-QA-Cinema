@@ -15,7 +15,11 @@
     "bootstrap": "^5.2.0",
     "chai": "^4.3.6",
     "chai-http": "^4.3.0",
+<<<<<<< HEAD
     "cors": "^2.8.5",
+=======
+    "chao": "^1.0.4",
+>>>>>>> d51751e2f070a834008ff36cd93ec8b592f00efd
     "express": "^4.18.1",
     "install": "^0.13.0",
     "mocha": "^10.0.0",
@@ -38,7 +42,8 @@
     "test-mocha": "mocha Test",
     "eject": "react-scripts eject",
     "connect": "node ./src/API/APICall.js",
-    "reset-db": "node ./src/API/Schema/Init.js"
+    "reset-db": "node ./src/API/Schema/Init.js",
+    "coverage": "nyc npm run test-mocha"
   },
   "eslintConfig": {
     "extends": [
@@ -57,5 +62,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "nyc": "^15.1.0"
   }
 }
