@@ -33,7 +33,8 @@ const newFilm1 = new FilmModel({
     Classification: "15",
     Genres: ["Superhero", "Comic Book", "Crime"],
     Poster: "https://cdn.europosters.eu/image/750webp/122127.webp",
-    ReleaseDate: "2022-03-04T00:00:00Z"
+    ReleaseDate: "2022-03-04T00:00:00Z",
+    Url: "/whatsOn"
 });
 
 const newFilm2 = new FilmModel({
@@ -44,7 +45,8 @@ const newFilm2 = new FilmModel({
     Classification: "15",
     Genres: ["Horror", "Sci-Fi"],
     Poster: "https://hollywoodlife.com/wp-content/uploads/2022/06/Nope-Everything-To-Know-embed-1.jpg",
-    ReleaseDate: "2022-07-22T00:00:00Z"
+    ReleaseDate: "2022-07-22T00:00:00Z",
+    Url: "/whatsOn"
 });
 
 const newFilm3 = new FilmModel({
@@ -55,7 +57,8 @@ const newFilm3 = new FilmModel({
     Classification: "PG",
     Genres: ["Anime", "Shonen", "Action"],
     Poster: "https://m.media-amazon.com/images/M/MV5BMjhhMDU5Y2QtMzcyZS00ZGE1LTg3ZjMtMTYyOTM0OTFlYTRkXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
-    ReleaseDate: "2018-12-14T00:00:00Z"
+    ReleaseDate: "2018-12-14T00:00:00",
+    Url: "/whatsOn"
 });
 
 const newFilm4 = new FilmModel({
@@ -66,7 +69,8 @@ const newFilm4 = new FilmModel({
     Classification: "15",
     Genres: ["Post-apocalypse", "Action", "Thriller"],
     Poster: "https://images-na.ssl-images-amazon.com/images/I/A19WwNrox0L._RI_.jpg",
-    ReleaseDate: "2007-12-14T00:00:00Z"
+    ReleaseDate: "2007-12-14T00:00:00Z",
+    Url: "/whatsOn"
 });
 
 
@@ -78,7 +82,8 @@ const newFilm5 = new FilmModel({
     Classification: "12",
     Genres: ["Superhero", "Action", "Comic Book", "Crime", "Clown"],
     Poster: "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_.jpg",
-    ReleaseDate: "2008-07-14T00:00:00Z"
+    ReleaseDate: "2008-07-14T00:00:00Z",
+    Url: "/whatsOn"
 });
 
 const newFilm6 = new FilmModel({
@@ -88,7 +93,8 @@ const newFilm6 = new FilmModel({
     Classification: "12A",
     Genres: ["Superhero", "Comic Book", "Action"],
     Poster: "https://pbs.twimg.com/media/FcEcTXfacAId-13?format=jpg&name=large",
-    ReleaseDate: "2022-10-21T00:00:00Z"
+    ReleaseDate: "2022-10-21T00:00:00Z",
+    Url: "/upcoming"
 });
 
 const newFilm7 = new FilmModel({
@@ -98,7 +104,8 @@ const newFilm7 = new FilmModel({
     Classification: "12A",
     Genres: ["Sci-Fi", "Action"],
     Poster: "https://m.media-amazon.com/images/M/MV5BMWFmYmRiYzMtMTQ4YS00NjA5LTliYTgtMmM3OTc4OGY3MTFkXkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_.jpg",
-    ReleaseDate: "2022-12-16T00:00:00Z"
+    ReleaseDate: "2022-12-16T00:00:00Z",
+    Url: "/upcoming"
 });
 
 async function saveFilms(){

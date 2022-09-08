@@ -41,7 +41,7 @@ router.get("/searchFilm/:title", (req, res) =>{
 
 router.get("/getUpcomingFilms", (req, res) =>{
     let currentDate = new Date().toISOString();
-    FilmModel.findMany({ReleaseDate: {$gt : currentDate}}).select('-_id -__v').then((result) =>{
+    FilmModel.find({ReleaseDate: {$gt : currentDate}}).select('-_id -__v').then((result) =>{
         res.send(JSON.stringify(result));
         console.log(JSON.stringify(result));
     }).catch(err =>{

@@ -15,7 +15,8 @@ const film1 = {
     Classification: '15',
     Genres: [ 'Superhero', 'Comic Book', 'Crime' ],
     Poster: 'https://cdn.europosters.eu/image/750webp/122127.webp',
-    ReleaseDate: "2022-03-04T00:00:00.000Z"
+    ReleaseDate: "2022-03-04T00:00:00.000Z",
+    Url: "/whatsOn"
 }
 const film2 = {
     Film_id: "2",
@@ -28,7 +29,8 @@ const film2 = {
         "Sci-Fi"
     ],
     Poster: "https://hollywoodlife.com/wp-content/uploads/2022/06/Nope-Everything-To-Know-embed-1.jpg",
-    ReleaseDate: "2022-07-22T00:00:00.000Z"
+    ReleaseDate: "2022-07-22T00:00:00.000Z",
+    Url: "/whatsOn"
 }
 const film3 = {
     Film_id: "3",
@@ -42,7 +44,8 @@ const film3 = {
         "Action"
     ],
     Poster: "https://m.media-amazon.com/images/M/MV5BMjhhMDU5Y2QtMzcyZS00ZGE1LTg3ZjMtMTYyOTM0OTFlYTRkXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
-    ReleaseDate: "2018-12-14T00:00:00.000Z"
+    ReleaseDate: "2018-12-14T00:00:00.000Z",
+    Url: "/whatsOn"
 }
 const film4 = {
     Film_id: "4",
@@ -56,7 +59,8 @@ const film4 = {
         "Thriller"
     ],
     "Poster": "https://images-na.ssl-images-amazon.com/images/I/A19WwNrox0L._RI_.jpg",
-    ReleaseDate: "2007-12-14T00:00:00.000Z"
+    ReleaseDate: "2007-12-14T00:00:00.000Z",
+    Url: "/whatsOn"
 }
 const film5 = {
     Film_id: "5",
@@ -72,7 +76,8 @@ const film5 = {
         "Clown"
     ],
     Poster: "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_.jpg",
-    ReleaseDate: "2008-07-14T00:00:00.000Z"
+    ReleaseDate: "2008-07-14T00:00:00.000Z",
+    Url: "/whatsOn"
 }
 
 const film6 = {
@@ -82,7 +87,8 @@ const film6 = {
     Classification: "12A",
     Genres: ["Superhero", "Comic Book", "Action"],
     Poster: "https://pbs.twimg.com/media/FcEcTXfacAId-13?format=jpg&name=large",
-    ReleaseDate: "2022-10-21T00:00:00.000Z"
+    ReleaseDate: "2022-10-21T00:00:00.000Z",
+    Url: "/upcoming"
 };
 
 const film7 = {
@@ -92,7 +98,8 @@ const film7 = {
     Classification: "12A",
     Genres: ["Sci-Fi", "Action"],
     Poster: "https://m.media-amazon.com/images/M/MV5BMWFmYmRiYzMtMTQ4YS00NjA5LTliYTgtMmM3OTc4OGY3MTFkXkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_.jpg",
-    ReleaseDate: "2022-12-16T00:00:00.000Z"
+    ReleaseDate: "2022-12-16T00:00:00.000Z",
+    Url: "/upcoming"
 };
 
 const allFilms = [
@@ -117,7 +124,8 @@ const newFilm = {
             "Crime"
         ],
         Poster: "https://cdn.europosters.eu/image/750webp/122127.webp",
-        ReleaseDate: "2022-07-08T00:00:00.000Z"
+        ReleaseDate: "2022-07-08T00:00:00.000Z",
+        Url: "/whatsOn"
 }
 
 
