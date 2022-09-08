@@ -1,22 +1,27 @@
 import axios from "axios";
 import { useState } from "react";
+import StripeCheckout from 'react-stripe-checkout'
 import './BookingAxios.css'
 import Screening from "./ScreeningAxios";
-import { Route, Routes, Link,} from "react-router-dom";
+import { Route, Routes, Link, useLocation} from "react-router-dom";
 import PaymentForm from "../Payment/PaymentForm";
 
-const BookingAxios = () => {
+function refGen(){
+let r = (Math.random() * 9999).toString(36).substring(3);
+    return r;
+}
 
+const BookingAxios = () => {
+    const location = useLocation();
     const [name, setName] = useState("")
     const [seats, setSeats] = useState([])
-    const [screenNumber, setScreenNumber] = useState([])
     const [adultTickets, setAdultTickets] = useState(1)
     const [childTickets, setChildTickets] = useState(0)
-    const [amountPaid, setAmountPpaid] = useState(0)
     const [booking, setBooking] = useState([])
-
     const [showForm, setShowForm] = useState(false);
+    const [error, setError] = useState("Error number of seats don't match users");
 
+    const {screening} = location.state;
     const getForm = () => {
         setShowForm(!showForm);
       }
@@ -24,13 +29,10 @@ const BookingAxios = () => {
     const getName = (e) => {
         setName(e.target.value)
     }
-
-    const getScreen = (e) => {
-        setScreenNumber(e.target.value)
-    }
     
     const getSeats = (e) =>{
-        setSeats(e.target.value)
+        let reg = /\s*/g;
+        setSeats(e.target.value.replace(reg, "").split(","))
     }
 
     const getAdultTickets = (e) => {
@@ -41,42 +43,57 @@ const BookingAxios = () => {
         setChildTickets(e.target.value)
     }
 
-    const getAmountPaid = (e) =>{
-        setAmountPpaid(e.target.value)
+
+    const TotalPrice = ((adultTickets*7) + (childTickets*5));
+
+    
+    const updateScreening = () => {
+        axios.put("http://localhost:8081/api/updateScreening/" + screening.Screening_id, {
+            "bookedSeats":seats
+        }).then(result => {
+            console.log(result.data);
+        })
     }
+    console.log(screening.Screening_id);
 
 
 
-    const createBooking = (e) => {
+    const createBooking = () => {
+       console.log("gg");
         axios.post("http://localhost:8081/api/addBooking", {
-        "CustomerRef":1,
+        "CustomerRef":refGen(),
         "CustomerName":name,
-        "Screening":screenNumber,
+        "Screening":screening.Screening_id,
         "Seats":seats,
         "AdultTickets":adultTickets,
         "ChildTickets":childTickets,
         "TransactionRef": 'sdfsfsf',
         "Screening": {
-            "Screening_id": 1,
-            "Title" : "dbz",
-            "Runtime" : 200,
-            "ScreeningType ": "3d",
-           "ScreeningTime" : 200,
+            "Screening_id": screening.Screening_id,
+            "Title" : screening.Title,
+            "Runtime" : screening.Runtime,
+            "ScreeningType": screening.ScreeningType,
+           "ScreeningTime" : screening.ScreeningTime,
         },
-        "AmountPaid": (adultTickets*7) + (childTickets*5)
+        "AmountPaid": TotalPrice
         }).then(result => {
             setBooking(result.data);
             console.log(result.data);
-            //window.location.reload();
+            updateScreening();
+            window.location.reload();
+        }).catch(err => {
+            console.log(err);
         })
+ 
     }
-
+    const handleToken = (token) =>{
+        createBooking();
+        console.log(token)
+    }
     
     return(
         <>
-            <form>
-                <p><label for="screening_id">Screen number:</label></p>
-                <p><input tpye="number" id="screening_id" placeholder="Enter screen number" onChange={e => getScreen(e)}></input></p>
+                <div>
                 <p><label for="name"><b>Name:</b></label></p>
                 <p><input type="text" id="name" placeholder="Enter name" required onChange={e => getName(e)}/></p>
                 <p><label for="adultQuantity"><b>Adult tickets:</b></label></p>
@@ -85,11 +102,22 @@ const BookingAxios = () => {
                 <p><input type="number" id="childQuantity" placeholder="Enter number of tickets" required onChange={e => getChildTickets(e)} /></p>
                 <p><label for="seats"><b>Seats:</b></label></p>
                 <p><input type="text" id="seats" placeholder="e.g. 3, 4, 5...." required onChange={e => getSeats(e)} /></p>
-        
 
-                <PaymentForm name={"batman"} bookingPrice={100} ><button onClick={e => createBooking(e)}>book!</button></PaymentForm>
-            </form> 
+                 <div>           
+            <StripeCheckout 
+            stripeKey="pk_test_51Lf1fEJZZzPMafliFZgLMTzCZW3hv9V2Ictygbq67I1k0wtbop770IBt5lgVuQUSsUY9xeJqqFhaTfvOSqF4lJOk009grTvVva"
+            token={handleToken}
+            name={screening.Title}
+            amount={TotalPrice * 100} 
+            currency="GBP"
+            image={screening.Film.Poster}
+            >
+            </StripeCheckout> 
+            <img src={screening.Film.Poster}></img>
+                </div>
 
+            </div> 
+           
 
            
             </> 

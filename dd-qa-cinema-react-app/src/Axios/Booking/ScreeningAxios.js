@@ -52,21 +52,24 @@ const ScreeningAxios = () => {
     }, []);
     
     return(
+
         <>
+                   
             <h1>Screenings</h1>
             <div className="bookingPageContainer">   
-                <Link to='BookingPage' className="bookingPage"><h4>Booking</h4></Link>
     
             </div>
+
             <div className="Screening-container"> 
             {screenings.map((screening, key) =>{
                 return(
-                    
-                <div className="screening-row">
-        
-               
+
+                <div className="screening-row" id={key}>
+
+
                     <img src={screening.Film.Poster} /> 
-               
+                    <Link to="/BookingPage" state={{screening}}>Book</Link>
+
                         <h4>{screening.Title}</h4>
                         <p>
                         Screen number: {screening.Screening_id}<br></br>
@@ -74,9 +77,7 @@ const ScreeningAxios = () => {
                         Screening Type: {screening.ScreeningType}, <br></br>
                         Screen Time: {screening.ScreeningTime}<br></br>
                         Screen Seats: {screening.AvailableSeats}
-                        </p>
-                        
-               
+                        </p>    
                 </div>
                 )
             })}
@@ -84,7 +85,6 @@ const ScreeningAxios = () => {
             </div>
         </>
     )
-  
-            }
+}
 
 export default ScreeningAxios;

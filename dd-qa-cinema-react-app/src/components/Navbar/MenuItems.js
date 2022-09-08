@@ -6,12 +6,12 @@ export const MenuItems = [
     },
     {   
         title: "Whats On?",
-        url: "whatsON",
+        url: "/whatsOn",
         cName: "nav-links"
     },
     {
         title: "Upcoming",
-        url: "#",
+        url: "/upcoming",
         cName: "nav-links"
     },
     {

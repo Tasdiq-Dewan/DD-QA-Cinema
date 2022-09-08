@@ -42,11 +42,14 @@
   opacity:0;
   }
   }
-  
-  #cf3 img.top {
-  animation-name: cf3FadeInOut;
+ 
+ .imgs {
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
   animation-duration: 10s;
   animation-direction: alternate;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+  height: 10%;
   }

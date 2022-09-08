@@ -12,7 +12,7 @@ function Footer(){
                 <div className='footer-link-wrapper'>
                     <div class='footer-link-items'>
                         <h2>
-                            <Link to='/homepage'>Home</Link>
+                            <Link to='/'>Home</Link>
                         </h2>
                     </div>
                     <div class='footer-link-items'>

@@ -10,6 +10,8 @@ import ScreeningAxios from './Axios/Booking/ScreeningAxios'
 import Booking from './Axios/Booking/BookingPage'
 
 
+import React from 'react';
+
 
 function App() {
   return (
