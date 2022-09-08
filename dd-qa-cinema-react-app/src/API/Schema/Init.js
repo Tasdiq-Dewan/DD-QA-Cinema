@@ -1,7 +1,7 @@
-const {FilmSchema} = require("./API/Schema/Film-Schema.js");
-const {ScreeningSchema} = require("./API/Schema/Screening-Schema.js");
-const {BookingSchema} = require("./API/Schema/Bookings-Schema.js");
-const {DiscussionSchema} = require("./API/Schema/Discussions-Schema.js");
+const {FilmSchema} = require("./Film-Schema.js");
+const {ScreeningSchema} = require("./Screening-Schema.js");
+const {BookingSchema} = require("./Bookings-Schema.js");
+const {DiscussionSchema} = require("./Discussions-Schema.js");
 
 const mongoose = require("mongoose");
 const { json } = require("express");
