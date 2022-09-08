@@ -38,6 +38,16 @@ router.get("/searchFilm/:title", (req, res) =>{
     });
 });
 
+router.get("/getUpcomingFilms", (req, res) =>{
+    let currentDate = new Date().toISOString();
+    FilmModel.findMany({ReleaseDate: {$gt : currentDate}}).select('-_id -__v').then((result) =>{
+        res.send(JSON.stringify(result));
+        console.log(JSON.stringify(result));
+    }).catch(err =>{
+        console.log(err)
+    });
+});
+
 router.get("/searchByTerm/:term", (req, res) =>{
     FilmModel.find({$text :{$search: req.params.term}}).select('-_id -__v').then((result) =>{
         res.send(JSON.stringify(result));

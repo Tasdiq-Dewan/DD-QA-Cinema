@@ -32,7 +32,8 @@ const newFilm1 = new FilmModel({
     Synopsis: "Batman film init",
     Classification: "15",
     Genres: ["Superhero", "Comic Book", "Crime"],
-    Poster: "https://cdn.europosters.eu/image/750webp/122127.webp"
+    Poster: "https://cdn.europosters.eu/image/750webp/122127.webp",
+    ReleaseDate: "2022-03-04T00:00:00Z"
 });
 
 const newFilm2 = new FilmModel({
@@ -42,7 +43,8 @@ const newFilm2 = new FilmModel({
     Synopsis: "Alien in the clouds, init",
     Classification: "15",
     Genres: ["Horror", "Sci-Fi"],
-    Poster: "https://hollywoodlife.com/wp-content/uploads/2022/06/Nope-Everything-To-Know-embed-1.jpg"
+    Poster: "https://hollywoodlife.com/wp-content/uploads/2022/06/Nope-Everything-To-Know-embed-1.jpg",
+    ReleaseDate: "2022-07-22T00:00:00Z"
 });
 
 const newFilm3 = new FilmModel({
@@ -52,7 +54,8 @@ const newFilm3 = new FilmModel({
     Synopsis: "Super Saiyans fighting, init",
     Classification: "PG",
     Genres: ["Anime", "Shonen", "Action"],
-    Poster: "https://m.media-amazon.com/images/M/MV5BMjhhMDU5Y2QtMzcyZS00ZGE1LTg3ZjMtMTYyOTM0OTFlYTRkXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg"
+    Poster: "https://m.media-amazon.com/images/M/MV5BMjhhMDU5Y2QtMzcyZS00ZGE1LTg3ZjMtMTYyOTM0OTFlYTRkXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
+    ReleaseDate: "2018-12-14T00:00:00"
 });
 
 const newFilm4 = new FilmModel({
@@ -62,8 +65,10 @@ const newFilm4 = new FilmModel({
     Synopsis: "Dog dies, init",
     Classification: "15",
     Genres: ["Post-apocalypse", "Action", "Thriller"],
-    Poster: "https://images-na.ssl-images-amazon.com/images/I/A19WwNrox0L._RI_.jpg"
+    Poster: "https://images-na.ssl-images-amazon.com/images/I/A19WwNrox0L._RI_.jpg",
+    ReleaseDate: "2007-12-14T00:00:00Z"
 });
+
 
 const newFilm5 = new FilmModel({
     Film_id: "5",
@@ -75,18 +80,42 @@ const newFilm5 = new FilmModel({
     Poster: "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_.jpg"
 });
 
+const newFilm6 = new FilmModel({
+    Film_id: "6",
+    Title: "Black Adam",
+    Synopsis: "Changing the hierarchy of the DC Universe, init",
+    Classification: "12A",
+    Genres: ["Superhero", "Comic Book", "Action"],
+    Poster: "https://pbs.twimg.com/media/FcEcTXfacAId-13?format=jpg&name=large",
+    ReleaseDate: "2022-10-21T00:00:00Z"
+});
+
+const newFilm7 = new FilmModel({
+    Film_id: "7",
+    Title: "Avatar: The Way of Water",
+    Synopsis: "Blue people, init",
+    Classification: "12A",
+    Genres: ["Sci-Fi", "Action"],
+    Poster: "https://m.media-amazon.com/images/M/MV5BMWFmYmRiYzMtMTQ4YS00NjA5LTliYTgtMmM3OTc4OGY3MTFkXkEyXkFqcGdeQXVyODk4OTc3MTY@._V1_.jpg",
+    ReleaseDate: "2022-12-16T00:00:00Z"
+});
+
 async function saveFilms(){
     newFilm1.isNew = true;
     newFilm2.isNew = true;
     newFilm3.isNew = true;
     newFilm4.isNew = true;
     newFilm5.isNew = true;
+    newFilm6.isNew = true;
+    newFilm7.isNew = true;
     await newFilm1.save();
     await newFilm2.save();
     await newFilm3.save();
     await newFilm4.save();
     await newFilm5.save();
-    console.log("All films saved", newFilm1, newFilm2, newFilm3, newFilm4, newFilm5);
+    await newFilm6.save();
+    await newFilm7.save();
+    console.log("All films saved", newFilm1, newFilm2, newFilm3, newFilm4, newFilm5, newFilm6, newFilm7);
 }
 
 //saveFilms();
