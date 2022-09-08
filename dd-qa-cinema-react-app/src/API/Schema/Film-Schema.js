@@ -9,7 +9,8 @@ const filmSchema = new FilmSchema({
     Classification : {type: String, required: true},
     Genres: {type: [String], required: true, min: 1},
     Poster:{type: String},
-    ReleaseDate: {type: Date, required: true}
+    ReleaseDate: {type: Date, required: true},
+    Url: {type: String, required: true}
 });
 
 filmSchema.index({Title: "text", Genres: "text", Synopsis: "text", Classification: "text"});
