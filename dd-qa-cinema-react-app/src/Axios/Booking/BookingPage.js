@@ -110,9 +110,10 @@ const BookingAxios = () => {
             name={screening.Title}
             amount={TotalPrice * 100} 
             currency="GBP"
+            image={screening.Film.Poster}
             >
             </StripeCheckout> 
-
+            <img src={screening.Film.Poster}></img>
                 </div>
 
             </div> 
