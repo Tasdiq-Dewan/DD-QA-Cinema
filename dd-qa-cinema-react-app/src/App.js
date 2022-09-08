@@ -8,12 +8,19 @@ import Classification from './Pages/Classification'
 import About from './Pages/About'
 import ScreeningAxios from './Axios/Booking/ScreeningAxios'
 import Booking from './Axios/Booking/BookingPage'
+import Discussion from './Axios/Discussions/DiscussionsAxios';
+import UpcomingFilms from './Axios/Films/UpcomingFilms'
+import {GetFilms} from './Axios/Films/FilmsAxios'
 
 
 import React from 'react';
 
 
+
 function App() {
+
+
+
   return (
     <>
     <Router>
@@ -26,6 +33,9 @@ function App() {
         <Route path="/about" element={<About/>} />
         <Route path="/screenings" element={<ScreeningAxios/>} />
         <Route path="/BookingPage" element = {<Booking />}/>
+        <Route path="/discussion" element = {<Discussion />}/>
+        <Route path="/upcoming" element ={<UpcomingFilms/>}/>
+        <Route path="/whatsOn" element ={<GetFilms/>}/>
       </Routes>
       <Footer/>
     </Router>

@@ -57,9 +57,8 @@ const ScreeningAxios = () => {
                    
             <h1 className="title">Screenings</h1>
             <div className="bookingPageContainer">   
-    
+ 
             </div>
-
             <div className="Screening-container"> 
             {screenings.map((screening, key) =>{
                 return(
@@ -77,6 +76,8 @@ const ScreeningAxios = () => {
                         Screen Time: {screening.ScreeningTime}<br></br>
                         Available Seats: {screening.AvailableSeats}
                         </p>    
+               
+
                 </div>
                 )
             })}

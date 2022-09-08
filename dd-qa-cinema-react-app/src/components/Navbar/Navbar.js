@@ -2,6 +2,7 @@ import React, { Component, useState } from 'react'
 import {Link} from 'react-router-dom';
 import { MenuItems } from './MenuItems';
 import { SearchFilm } from '../../Axios/Films/FilmsAxios';
+import logo from './logo.png'
 import './Navbar.css'
 
 
@@ -34,7 +35,7 @@ class Navbar extends Component {
             <>
             <nav className="NavbarItems">
                 <Link to="/" className='navbar-logo'>
-                    QA-Cinemas
+                    <img src={logo} alt="" />
                 </Link>
                 <div className="menu-icon" onClick={this.handleClick}>
                 <span className={this.state.clicked ? 'fas fa-times': 'fas fa-bars'}></span>
