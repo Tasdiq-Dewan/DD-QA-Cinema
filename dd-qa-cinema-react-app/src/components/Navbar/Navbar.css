@@ -3,7 +3,7 @@
     height: 70px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items:center;
     font-size: 1.2rem;
     position: sticky;
     top: 0;
@@ -19,7 +19,7 @@
     display: flex;
     align-items: center;
     height: auto;
-    width: 100%;
+    width: 20%;
     color: #30d456;
 }
 
@@ -40,10 +40,11 @@
 .nav-links{
     color: #fff;
     text-decoration: none;
-    display: flex;
-    padding: 0.5rem 1rem;
+    display: block;
+    padding: 0.1rem 0.5rem;
     align-items: center;
     height: 100%;
+
 }
 
 .nav-links:hover{
