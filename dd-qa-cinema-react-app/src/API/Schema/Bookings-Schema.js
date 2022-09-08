@@ -13,7 +13,7 @@ const ticketsSchema = new TicketsSchema({
 const bookingSchema = new BookingsSchema({
     CustomerRef: {type: String, required: true, max: 30, unique: true},
     CustomerName: {type: String, required: true},
-    Seats: [{type: String, default: 1, required: true, unique: true}],
+    Seats: [{type: String, default: 1, required: true}],
     AdultPrice: {type:Number, default:7},
     ChildPrice: {type:Number, default:5},
     AdultQuantity: {type: Number, default: 1},

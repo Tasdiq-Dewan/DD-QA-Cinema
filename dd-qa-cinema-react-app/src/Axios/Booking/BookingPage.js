@@ -19,6 +19,7 @@ const BookingAxios = () => {
     const [childTickets, setChildTickets] = useState(0)
     const [booking, setBooking] = useState([])
     const [showForm, setShowForm] = useState(false);
+    const [error, setError] = useState("Error number of seats don't match users");
 
     const {screening} = location.state;
     const getForm = () => {
@@ -41,6 +42,7 @@ const BookingAxios = () => {
     const getChildTickets = (e) =>{
         setChildTickets(e.target.value)
     }
+
 
     const TotalPrice = ((adultTickets*7) + (childTickets*5));
 
