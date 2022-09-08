@@ -12,7 +12,8 @@ mongoose.connect(global.dburl).then(res=>{
 const FilmModel = mongoose.model("Films", FilmSchema);
 
 router.get("/getAllFilms", (req, res) =>{
-    FilmModel.find({}).select('-_id -__v').then((result) =>{
+    let currentDate = new Date().toISOString();
+    FilmModel.find({ReleaseDate: {$lt : currentDate}}).select('-_id -__v').then((result) =>{
         res.send(JSON.stringify(result));
         console.log(JSON.stringify(result));
     }).catch(err =>{
@@ -31,6 +32,16 @@ router.get("/getById/:id", (req, res) =>{
 
 router.get("/searchFilm/:title", (req, res) =>{
     FilmModel.findOne({Title: req.params.title}).select('-_id -__v').then((result) =>{
+        res.send(JSON.stringify(result));
+        console.log(JSON.stringify(result));
+    }).catch(err =>{
+        console.log(err)
+    });
+});
+
+router.get("/getUpcomingFilms", (req, res) =>{
+    let currentDate = new Date().toISOString();
+    FilmModel.find({ReleaseDate: {$gt : currentDate}}).select('-_id -__v').then((result) =>{
         res.send(JSON.stringify(result));
         console.log(JSON.stringify(result));
     }).catch(err =>{
