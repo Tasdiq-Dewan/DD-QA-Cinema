@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+import StripeCheckout from 'react-stripe-checkout'
 import './BookingAxios.css'
 import Screening from "./ScreeningAxios";
 import { Route, Routes, Link, useLocation} from "react-router-dom";
@@ -29,7 +30,8 @@ const BookingAxios = () => {
     }
     
     const getSeats = (e) =>{
-        setSeats(e.target.value)
+        let reg = /\s*/g;
+        setSeats(e.target.value.replace(reg, "").split(","))
     }
 
     const getAdultTickets = (e) => {
@@ -54,8 +56,8 @@ const BookingAxios = () => {
 
 
 
-    const createBooking = (e) => {
-        e.preventDefault();
+    const createBooking = () => {
+       console.log("gg");
         axios.post("http://localhost:8081/api/addBooking", {
         "CustomerRef":refGen(),
         "CustomerName":name,
@@ -76,15 +78,20 @@ const BookingAxios = () => {
             setBooking(result.data);
             console.log(result.data);
             updateScreening();
-            //window.location.reload();
+            window.location.reload();
+        }).catch(err => {
+            console.log(err);
         })
  
     }
-
+    const handleToken = (token) =>{
+        createBooking();
+        console.log(token)
+    }
     
     return(
         <>
-                <form>
+                <div>
                 <p><label for="name"><b>Name:</b></label></p>
                 <p><input type="text" id="name" placeholder="Enter name" required onChange={e => getName(e)}/></p>
                 <p><label for="adultQuantity"><b>Adult tickets:</b></label></p>
@@ -93,13 +100,21 @@ const BookingAxios = () => {
                 <p><input type="number" id="childQuantity" placeholder="Enter number of tickets" required onChange={e => getChildTickets(e)} /></p>
                 <p><label for="seats"><b>Seats:</b></label></p>
                 <p><input type="text" id="seats" placeholder="e.g. 3, 4, 5...." required onChange={e => getSeats(e)} /></p>
-                {/* <button onClick={e => createBooking(e)}>book!</button> */}
-                
-                <PaymentForm Title={screening.Title} bookingPrice={TotalPrice} createBooking={createBooking} name={name} screen={screening} seats={seats} adult={adultTickets}
-                childs={childTickets} ><button>dd</button></PaymentForm>
-                
-            </form> 
 
+                 <div>           
+            <StripeCheckout 
+            stripeKey="pk_test_51Lf1fEJZZzPMafliFZgLMTzCZW3hv9V2Ictygbq67I1k0wtbop770IBt5lgVuQUSsUY9xeJqqFhaTfvOSqF4lJOk009grTvVva"
+            token={handleToken}
+            name={screening.Title}
+            amount={TotalPrice * 100} 
+            currency="GBP"
+            >
+            </StripeCheckout> 
+
+                </div>
+
+            </div> 
+           
 
            
             </> 
