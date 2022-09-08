@@ -340,3 +340,31 @@ describe("Films", function() {
     })
   });
 })
+
+
+chai.should();
+describe("Films", function() {
+    before(function(done){
+        mongoose.connect("mongodb://localhost:27017/qa-cinema-test",  function(err) {
+            done();
+        });
+    });
+    after(function(done){
+        mongoose.connection.close();
+        done();
+    })
+    this.beforeEach(async () => {
+        await clearCollections();
+        await createData();
+    });
+    it('should respond 200 after attempting to delete non existent film and return error message', (done) => {
+       chai.request(app)
+      .del(`/api/deleteFilm/10`)
+      .end((err, res) => {
+        expect(err).to.be.null;
+        expect(res).to.have.status(200);
+        done();
+      
+    })
+  });
+})
