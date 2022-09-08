@@ -38,6 +38,9 @@ router.get("/searchScreeningsByTerm/:term", (req, res) =>{
 });
 
 router.post("/addScreening", (req, res) =>{
+    console.log(req.body);
+    console.log(req.body.Film);
+    console.log("addscreening");
     ScreeningModel.create(req.body).then((result)=>{
         res.send(JSON.stringify(result));
     }).catch(err=>{

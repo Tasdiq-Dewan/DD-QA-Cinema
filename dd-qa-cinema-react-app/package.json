@@ -16,6 +16,7 @@
     "chai": "^4.3.6",
     "chai-http": "^4.3.0",
     "cors": "^2.8.5",
+    "chao": "^1.0.4",
     "express": "^4.18.1",
     "install": "^0.13.0",
     "mocha": "^10.0.0",
@@ -28,7 +29,6 @@
     "react-router": "^6.3.0",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
-    "react-stripe": "^0.1.0",
     "react-stripe-checkout": "^2.6.3",
     "reactstrap": "^9.1.4",
     "web-vitals": "^2.1.4"
@@ -40,7 +40,8 @@
     "test-mocha": "mocha Test",
     "eject": "react-scripts eject",
     "connect": "node ./src/API/APICall.js",
-    "reset-db": "node ./src/API/Schema/Init.js"
+    "reset-db": "node ./src/API/Schema/Init.js",
+    "coverage": "nyc npm run test-mocha"
   },
   "eslintConfig": {
     "extends": [
@@ -59,5 +60,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "nyc": "^15.1.0"
   }
 }

@@ -77,7 +77,7 @@ const About = () => {
                     <td>Git-Hub Master, Back-end and Tester</td>
                     <td>Full Stack Engineer</td>
                     <td>Full Stack Engineer</td>
-                    <td>Front-end and Tester</td>
+                    <td>Full Stack Engineer</td>
                     <td>Scrum Master, Front-end and Tester</td>
                 </tr>
                 </table>
