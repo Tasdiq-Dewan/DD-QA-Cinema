@@ -1,8 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import './BookingAxios.css'
-import { Route, Routes, Link,} from "react-router-dom";
-import Booking from "./BookingPage";
+import './ScreeningAxios.css'
+import { Link,} from "react-router-dom";
+
 const ScreeningAxios = () => {
 
     const [name, setName] = useState("")
@@ -52,15 +52,13 @@ const ScreeningAxios = () => {
     }, []);
     
     return(
+
         <>
                    
-            <h1>Screenings</h1>
+            <h1 className="title">Screenings</h1>
             <div className="bookingPageContainer">   
-            <Routes>
-                    <Route path="/BookingPage" element={<Booking /> }>
-                    </Route>
-                    </Routes>    
-                   </div>
+ 
+            </div>
             <div className="Screening-container"> 
             {screenings.map((screening, key) =>{
                 return(
@@ -69,18 +67,17 @@ const ScreeningAxios = () => {
 
 
                     <img src={screening.Film.Poster} /> 
-                    <Link to="/BookingPage" state={{screening}}>Butt</Link>
+                    <Link to="/BookingPage" state={{screening}}><button className="book-btn">book</button></Link>
 
                         <h4>{screening.Title}</h4>
                         <p>
                         Screen number: {screening.Screening_id}<br></br>
-                        Runtime: {screening.Runtime}<br></br>
                         Screening Type: {screening.ScreeningType}, <br></br>
                         Screen Time: {screening.ScreeningTime}<br></br>
-                        Screen Seats: {screening.AvailableSeats}
-                        </p>
-                        
+                        Available Seats: {screening.AvailableSeats}
+                        </p>    
                
+
                 </div>
                 )
             })}
@@ -88,7 +85,6 @@ const ScreeningAxios = () => {
             </div>
         </>
     )
-  
-            }
+}
 
 export default ScreeningAxios;

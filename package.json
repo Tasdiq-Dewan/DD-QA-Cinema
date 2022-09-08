@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "react-bootstrap": "^2.5.0",
+    "react-stripe-checkout": "^2.6.3"
+  }
+}

@@ -1,14 +1,9 @@
-/*body{
-    background-color: #242424;
-    animation: fadeIn 5s infinite linear;
+body{
+    background-color:lightgreen;
 }
-@keyframes fadeIn {
-    from {background-color: #242424 }
-    50%{background-color:#474343 }
-    to{background-color: #242424 }
-}*/
+
 .bodyContainer{
-    color: white;
+    color: black;
     display:block;
     text-align: center;
     margin: 10px;
