@@ -7,7 +7,7 @@ const mongoose = require("mongoose");
 const { json } = require("express");
 const { dblClick } = require("@testing-library/user-event/dist/click.js");
 
-mongoose.connect("mongodb://localhost:27017/qa-cinema-test").then(res=>{
+mongoose.connect("mongodb://localhost:27017/qa-cinema").then(res=>{
     console.log("connected to test db");
 }).catch(err => {
     console.log(errMessage);
