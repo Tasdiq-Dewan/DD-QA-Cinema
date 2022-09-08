@@ -55,7 +55,7 @@ const newFilm3 = new FilmModel({
     Classification: "PG",
     Genres: ["Anime", "Shonen", "Action"],
     Poster: "https://m.media-amazon.com/images/M/MV5BMjhhMDU5Y2QtMzcyZS00ZGE1LTg3ZjMtMTYyOTM0OTFlYTRkXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg",
-    ReleaseDate: "2018-12-14T00:00:00"
+    ReleaseDate: "2018-12-14T00:00:00Z"
 });
 
 const newFilm4 = new FilmModel({
@@ -77,7 +77,8 @@ const newFilm5 = new FilmModel({
     Synopsis: "Why so serious Batman, init",
     Classification: "12",
     Genres: ["Superhero", "Action", "Comic Book", "Crime", "Clown"],
-    Poster: "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_.jpg"
+    Poster: "https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_.jpg",
+    ReleaseDate: "2008-07-14T00:00:00Z"
 });
 
 const newFilm6 = new FilmModel({
