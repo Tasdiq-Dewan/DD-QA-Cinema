@@ -19,12 +19,12 @@ const GetFilms = () => {
             {
             films.map(film =>(
                 <div className="upcoming">
-                    <li key={film.id}><h1>{film.Title}</h1>
+                    <li key={film.id}><h3>{film.Title}</h3>
                     <p>Runtime: {film.Runtime}</p>
                     <p>Synopsis: {film.Synopsis}</p>
                     <p>Classification: {film.Classification}</p>
                     <p>Release Date: {film.ReleaseDate}</p>
-                    <img clasName="film-img" src={film.Poster}/>
+                    <img clasName="movie-img" src={film.Poster} alt=""/>
                     </li>
                 </div>
             ))

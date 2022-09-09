@@ -1,6 +1,9 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import './Searchbar.css'
+
+
+
 const GetFilms = () => {
     const [films, setFilms] = useState([]);
 
@@ -18,12 +21,14 @@ const GetFilms = () => {
         <h1><ul>
             {
             films.map(film =>(
-                <li key={film.id}><h1>{film.Title}</h1>
-                <p>Runtime: {film.Runtime}</p>
-                <p>Synopsis: {film.Synopsis}</p>
-                <p>Classification: {film.Classification}</p>
-                <h2><img src={film.Poster}></img></h2>
-                </li>
+                    <div className="upcoming">
+                        <li key={film.id}><h3>{film.Title}</h3>
+                        <p>Runtime: {film.Runtime}</p>
+                        <p>Synopsis: {film.Synopsis}</p>
+                        <p>Classification: {film.Classification}</p>
+                        <h2><img  src={film.Poster}></img></h2>
+                        </li>
+                    </div>
             ))
             }
             </ul></h1>
@@ -59,14 +64,16 @@ const SearchFilm = () =>{
     
             {
             film.map(film =>(
+            <div className="upcoming">
                 
                 <a key={film.id} href={film.Url} className = 'data-item' >
                     <div className = 'film-title'>
                 <h4>{film.Title}</h4>
                 <p>{film.Synopsis}<p>{film.Classification}</p></p>
-                <p><img src={film.Poster}></img></p>
+                <img classname="search-img" src={film.Poster}></img>
                 </div>
                 </a>
+            </div>
                 
             ))
             }

@@ -14,6 +14,7 @@ import {GetFilms} from './Axios/Films/FilmsAxios'
 
 
 import React from 'react';
+import Submit from './Pages/Submit'
 
 
 
@@ -36,6 +37,7 @@ function App() {
         <Route path="/discussion" element = {<Discussion />}/>
         <Route path="/upcoming" element ={<UpcomingFilms/>}/>
         <Route path="/whatsOn" element ={<GetFilms/>}/>
+        <Route path="/confirmation" element ={<Submit/>} />
       </Routes>
       <Footer/>
     </Router>
