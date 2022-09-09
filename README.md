@@ -88,6 +88,11 @@ This is the Discussion page where the user can create a discussion post. The for
 The user can also view posts made by other users.
 ![image](https://user-images.githubusercontent.com/37335919/189322905-694ce8c9-a857-4d92-a820-30683ccf4126.png)
 
-### Footer/O
-This is the footer at the bottom of the page. It has buttons for the Home page, Who We Are page, Location/Opening Times page, Classifications page, Contact Us page, and social media links.
+### Footer
+This is the footer at the bottom of the page. It has buttons for the Home page, About/Who We Are page, Location/Opening Times page, Classifications page, Contact Us page, and social media links.
 ![image](https://user-images.githubusercontent.com/37335919/189323164-f6c5c39b-b365-46ac-87e5-316033884f85.png)
+
+### About
+This is the About page, which details our team that developed the QA Cinema website. It includes our names, our roles within the team, and links to our githubs and emails.
+![image](https://user-images.githubusercontent.com/37335919/189325371-3ab85fe1-47bf-494e-8c78-115d394d9b1e.png)
+
