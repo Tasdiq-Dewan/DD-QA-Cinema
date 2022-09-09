@@ -82,3 +82,9 @@ This is the booking page where users are directing after clicking "book" for the
 Upon entering the information and clicking "pay" this checkout form will pop up so the user can enter payment details.
 ![image](https://user-images.githubusercontent.com/37335919/189322170-2437f9d3-9456-4c88-a9f0-dce13657b785.png)
 
+### Discussion Page
+This is the Discussion page where the user can create a discussion post. The form lets the user enter their username, post title, and the body of their post.
+![image](https://user-images.githubusercontent.com/37335919/189322703-654ab971-3090-4297-867e-64e249b95567.png)
+The user can also view posts made by other users.
+![image](https://user-images.githubusercontent.com/37335919/189322905-694ce8c9-a857-4d92-a820-30683ccf4126.png)
+
