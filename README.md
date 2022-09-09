@@ -62,3 +62,11 @@ Example 1: Searching for the term "Batman" will return two films: 'The Dark Knig
 Example 2: Searching for the term "Anime" will return one film: 'Dragon Ball Super: Broly'
 ![image](https://user-images.githubusercontent.com/37335919/189320269-e4151725-02ed-4500-9554-6462247d30f2.png)
 
+### What's On
+This is the What's On page, which shows films currently being shown at QA Cinema.
+![image](https://user-images.githubusercontent.com/37335919/189320605-98c09722-ac0e-45ec-9436-fcc3974a8004.png)
+![image](https://user-images.githubusercontent.com/37335919/189320680-8e8eac8b-ae37-4130-91f8-cef37c7d3765.png)
+
+### Upcoming
+This is the Upcoming page, which shows films that will be released soon as well as their release date.
+![image](https://user-images.githubusercontent.com/37335919/189321106-15ba981f-31f3-4285-a038-fb6dee2ca038.png)
