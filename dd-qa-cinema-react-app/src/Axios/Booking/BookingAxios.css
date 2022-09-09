@@ -6,14 +6,6 @@
     margin-right: auto;
 }
 
-
-img{
-    width: 40%;
-    height: 60%;
-    margin-left: 5px;
-    margin-right: 5px;
-    display: static;
-}
 .bookingPage {
     text-decoration: none;
     position: sticky;
@@ -28,6 +20,7 @@ img{
     margin-left:auto;
     margin-right:auto;
     cursor: pointer;
+    border-radius: 20px;
 }
 
 .seating-btn{
@@ -50,17 +43,19 @@ img{
 }
 
 
-.movie-img{
-    margin-left:auto;
-    margin-right:auto;
-    width: 20%;
-    height: 10%;
-}
-
 .seating-img{
-    margin-left:auto;
+    margin-left: 32%;
     margin-right:auto;
     width: 500px;
     height: 300px;
+    padding-top: 20px;
 
+}
+
+.movie-img{
+    width: 10%;
+    height: 30%;
+    margin-left: 45%;
+    margin-right: 10%;
+    display: static;
 }

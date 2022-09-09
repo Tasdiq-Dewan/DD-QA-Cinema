@@ -4,11 +4,12 @@ function Classification(){
         <>
 
             <h3>Proof of Age</h3>
-            <p>For all discounted tickets and entry to age-restricted films, proof of entitlement or age will be required.</p>
+            <div className='classifications'>
+            <p className='classification-txt'>For all discounted tickets and entry to age-restricted films, proof of entitlement or age will be required.</p>
 
 
 
-             <p>It is impossible to predict what might upset any particular child. But a 'U' film should be suitable for audiences aged four years and over. 'U' films should be set within a positive moral framework and should offer reassuring counterbalances to any violence, threat or horror.</p>
+             <p >It is impossible to predict what might upset any particular child. But a 'U' film should be suitable for audiences aged four years and over. 'U' films should be set within a positive moral framework and should offer reassuring counterbalances to any violence, threat or horror.</p>
               <img className="rating" src="https://www.cineworld.co.uk/static/dam/jcr:3ca113ba-5ae6-4ee5-91b3-c25b7b012530/U.png" alt=""/>
 
              <p>Unaccompanied children of any age may watch. A 'PG' film should not disturb a child aged around eight or older. However, parents are advised to consider whether the content may upset younger or more sensitive children.</p>
@@ -25,6 +26,7 @@ function Classification(){
 
              <p>To be confirmed - in some instances films have not yet been certified.</p>
              <img className="rating" src="https://www.cineworld.co.uk/static/dam/jcr:59e20700-82fb-40c5-a673-337e7659a38c/TBC.png" alt=""/>
+             </div>
           
         </>
     );
