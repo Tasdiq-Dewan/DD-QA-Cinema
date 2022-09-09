@@ -96,3 +96,6 @@ This is the footer at the bottom of the page. It has buttons for the Home page, 
 This is the About page, which details our team that developed the QA Cinema website. It includes our names, our roles within the team, and links to our githubs and emails.
 ![image](https://user-images.githubusercontent.com/37335919/189325371-3ab85fe1-47bf-494e-8c78-115d394d9b1e.png)
 
+### Location/Opening Times
+This is the Location page, which provides information on the location and opening times of QA Cinema including address, google map, how to get there, and places to go in the area.
+![image](https://user-images.githubusercontent.com/37335919/189326002-b59f5a85-c6fe-42f2-b17d-8dcefbf1b1b6.png)
