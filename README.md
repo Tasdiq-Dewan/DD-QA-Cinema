@@ -42,7 +42,7 @@ Our tests are written using ```mocha``` and ```chai``` and test our Express back
 
 ### Running Test
 
-In the directory ```dd-qa-cinema-react-app``` run the command ```npm run coverage``` to run the tests and get coverage using Istanbul. To run tests without coverage run the commmand ```nmpm run test-mocha```.
+In the directory ```dd-qa-cinema-react-app``` run the command ```npm run coverage``` to run the tests and get coverage using Istanbul. To run tests without coverage run the commmand ```npm run test-mocha```.
 
 ### Coverage
 When we run test coverage of our Express API we recieve the following results which show a branch coverage of 100%. Function coverage is 87.62% as the ```catch``` functions for our API routes have not been tested.
