@@ -23,7 +23,7 @@ const GetFilms = () => {
                     <p>Runtime: {film.Runtime}</p>
                     <p>Synopsis: {film.Synopsis}</p>
                     <p>Classification: {film.Classification}</p>
-                    <p>Release Date: {film.ReleaseDate}</p>
+                    <p>Release Date: {film.ReleaseDate.substring(0, 10)}</p>
                     <img clasName="movie-img" src={film.Poster} alt=""/>
                     </li>
                 </div>

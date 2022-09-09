@@ -72,9 +72,9 @@ const ScreeningAxios = () => {
                         <h4>{screening.Title}</h4>
                         <p>
                         Screen number: {screening.Screening_id}<br></br>
-                        Screening Type: {screening.ScreeningType}, <br></br>
-                        Screen Time: {screening.ScreeningTime}<br></br>
-                        Available Seats: {screening.AvailableSeats}
+                        Screening Type: {screening.ScreeningType.join(",")}, <br></br>
+                        Screen Time: {screening.ScreeningTime.replace("T"," ").replace("Z", " ")}<br></br>
+                        Screen Seats: {screening.AvailableSeats.join(",")}
                         </p>    
                
 
