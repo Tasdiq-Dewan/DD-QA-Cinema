@@ -21,3 +21,10 @@ To run the D&D QA Cinema website, the required Node packages need to be installe
 ### Local Host ports
 
 The application will use local host ports 3000, 8081, 27017 so make sure they are not already in use.
+
+## Running the Application
+
+### Starting the Express connection
+While inside the directory ```dd-qa-cinema-react-app``` run the command ```npm run connect`` which will start the Express server on port 8081. The follow should be output to the terminal.
+![image](https://user-images.githubusercontent.com/37335919/189315218-fd2527a5-12ca-4881-9fb9-6598e75aa413.png)
+
