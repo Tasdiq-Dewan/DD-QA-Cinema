@@ -5,6 +5,7 @@ import './BookingAxios.css'
 import Screening from "./ScreeningAxios";
 import { Route, Routes, Link, useLocation} from "react-router-dom";
 import PaymentForm from "../Payment/PaymentForm";
+import SeatingPlan from "./seating.png";
 
 function refGen(){
 let r = (Math.random() * 9999).toString(36).substring(3);
@@ -17,14 +18,15 @@ const BookingAxios = () => {
     const [seats, setSeats] = useState([])
     const [adultTickets, setAdultTickets] = useState(1)
     const [childTickets, setChildTickets] = useState(0)
-    const [booking, setBooking] = useState([])
-    const [showForm, setShowForm] = useState(false);
+    const [booking, setBooking] = useState([]) 
     const [error, setError] = useState("Error number of seats don't match users");
-
     const {screening} = location.state;
-    const getForm = () => {
-        setShowForm(!showForm);
-      }
+
+    const [showSeating, setShowSeating] = useState(false)
+
+    const showSeatingPlan = () => {
+        setShowSeating(!showSeating)
+    }
 
     const getName = (e) => {
         setName(e.target.value)
@@ -95,6 +97,10 @@ const BookingAxios = () => {
         <>
 
                 <img className="movie-img" src={screening.Film.Poster}></img>
+                <button className="seating-btn" onClick={showSeatingPlan}>view seating plan</button>
+                {showSeating && (
+                    <img  className="seating-img" src={SeatingPlan} alt="" />
+                )}
                 <div>
                 <p><label for="name"><b>Name:</b></label></p>
                 <p><input type="text" id="name" placeholder="Enter name" required onChange={e => getName(e)}/></p>
