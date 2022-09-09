@@ -122,6 +122,9 @@ This is the contact page which allows the user to contact the QA Cinema team, th
 
 ## Authors
 ### Team D&D
-[Tasdiq Dewan](https://github.com/Tasdiq-Dewan)
-Paul Chabinga:
-GitHub - https://github.com/tigerFish29
+* [Tasdiq Dewan](https://github.com/Tasdiq-Dewan)
+* [Paul Chabinga](https://github.com/tigerFish29)
+* [Daniyal Abbas](https://github.com/dzza1800)
+* [Daniel Maton-Walker](https://github.com/Dsoftwaredev)
+* [Uche Egbon](https://github.com/saintUche)
+* [Jabaran Khan](https://github.com/JabKhan23)
