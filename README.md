@@ -119,3 +119,9 @@ This is the Film Classifications page which explains each film classification an
 ### Contact Us
 This is the contact page which allows the user to contact the QA Cinema team, they can enter their name, email, and the message they want to send.
 ![image](https://user-images.githubusercontent.com/37335919/189327100-2f0da7c0-0675-484d-aa50-b5d55365e1c3.png)
+
+## Authors
+### Team D&D
+[Tasdiq Dewan](https://github.com/Tasdiq-Dewan)
+Paul Chabinga:
+GitHub - https://github.com/tigerFish29
