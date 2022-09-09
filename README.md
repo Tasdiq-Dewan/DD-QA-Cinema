@@ -70,3 +70,9 @@ This is the What's On page, which shows films currently being shown at QA Cinema
 ### Upcoming
 This is the Upcoming page, which shows films that will be released soon as well as their release date.
 ![image](https://user-images.githubusercontent.com/37335919/189321106-15ba981f-31f3-4285-a038-fb6dee2ca038.png)
+
+### Screenings
+This is the Screenings page which shows the user current screenings, including the screening type and available seats. The "Book" button will take the user to a page where they can book their tickets for that film.
+![image](https://user-images.githubusercontent.com/37335919/189321340-f5f4f64c-f0ce-49f7-8148-2a5b70b2a0ef.png)
+![image](https://user-images.githubusercontent.com/37335919/189321425-75666f4d-e22b-41fb-a397-572d119f60ee.png)
+
