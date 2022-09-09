@@ -36,6 +36,12 @@ Inside directory ```dd-qa-cinema-react-app``` run the command ```npm start`` whi
 When the app is finished launching, you should see the homepage:
 ![image](https://user-images.githubusercontent.com/37335919/189316072-9cdd3d5f-ecc9-4a99-a001-924ba0f79d53.png)
 
+## Testing
+
+### Running Test
+
+In the directory ```dd-qa-cinema-react-app``` run the command ```npm run coverage``` to run the tests and get coverage using Istanbul. To run tests without coverage run the commmand ```nmpm run test-mocha```.
+
 ## Application Overview
 
 ### Home Screen
