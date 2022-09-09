@@ -76,3 +76,9 @@ This is the Screenings page which shows the user current screenings, including t
 ![image](https://user-images.githubusercontent.com/37335919/189321340-f5f4f64c-f0ce-49f7-8148-2a5b70b2a0ef.png)
 ![image](https://user-images.githubusercontent.com/37335919/189321425-75666f4d-e22b-41fb-a397-572d119f60ee.png)
 
+### Booking Page
+This is the booking page where users are directing after clicking "book" for the screening they want. The booking form lets the user input their name, number of adult and child tickets, and the seats they want to book.
+![image](https://user-images.githubusercontent.com/37335919/189321834-86bec894-8868-4c20-bb82-e19d1fefd001.png)
+Upon entering the information and clicking "pay" this checkout form will pop up so the user can enter payment details.
+![image](https://user-images.githubusercontent.com/37335919/189322170-2437f9d3-9456-4c88-a9f0-dce13657b785.png)
+
