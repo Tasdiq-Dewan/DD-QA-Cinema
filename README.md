@@ -99,3 +99,7 @@ This is the About page, which details our team that developed the QA Cinema webs
 ### Location/Opening Times
 This is the Location page, which provides information on the location and opening times of QA Cinema including address, google map, how to get there, and places to go in the area.
 ![image](https://user-images.githubusercontent.com/37335919/189326002-b59f5a85-c6fe-42f2-b17d-8dcefbf1b1b6.png)
+
+### Classificatons
+This is the Film Classifications page which explains each film classification and also shows the icon for each one.
+![image](https://user-images.githubusercontent.com/37335919/189326660-78811906-4fbc-4381-8f01-868331d63880.png)
