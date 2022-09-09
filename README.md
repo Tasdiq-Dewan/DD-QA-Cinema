@@ -24,7 +24,13 @@ The application will use local host ports 3000, 8081, 27017 so make sure they ar
 
 ## Running the Application
 
-### Starting the Express connection
-While inside the directory ```dd-qa-cinema-react-app``` run the command ```npm run connect`` which will start the Express server on port 8081. The follow should be output to the terminal.
+### Starting the Express server
+While inside the directory ```dd-qa-cinema-react-app``` run the command ```npm run connect`` which will start the Express server on localhost port 8081. The follow should be output to the terminal.
 ![image](https://user-images.githubusercontent.com/37335919/189315218-fd2527a5-12ca-4881-9fb9-6598e75aa413.png)
+
+### Starting the React app
+Inside directory ```dd-qa-cinema-react-app``` run the command ```npm start`` which will launch the React app on local host port 3000 and will open the website in your browser.
+
+When the app is finished launching, you should see the homepage:
+![image](https://user-images.githubusercontent.com/37335919/189316072-9cdd3d5f-ecc9-4a99-a001-924ba0f79d53.png)
 
