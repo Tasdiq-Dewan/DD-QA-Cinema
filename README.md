@@ -1,6 +1,8 @@
 # DD-QA-Cinema
 
-Team D&D's QA Cinema website for QA Academy project. Technologies used include the MERN STACK (MongoDB, Express, React, and Node) as well as the following dependencies:
+Team D&D's QA Cinema website for QA Academy project. This a website for QA Cinema, allowing users to view new releases & upcoming films, book tickets, and add discussion posts.
+
+Technologies used include the MERN STACK (MongoDB, Express, React, and Node) as well as the following dependencies:
 * react-stripe (for payment checkout)
 * reactstrap (for styling)
 * axios (for API calls)
@@ -34,3 +36,8 @@ Inside directory ```dd-qa-cinema-react-app``` run the command ```npm start`` whi
 When the app is finished launching, you should see the homepage:
 ![image](https://user-images.githubusercontent.com/37335919/189316072-9cdd3d5f-ecc9-4a99-a001-924ba0f79d53.png)
 
+## Application Overview
+
+### Home Screen
+
+![image](https://user-images.githubusercontent.com/37335919/189316809-a1f004e8-6797-42ea-87cb-35ecfc3fbc8c.png)
