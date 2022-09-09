@@ -4,7 +4,6 @@ const mongoose = require("mongoose");
 mongoose.connect(global.dburl).then(res=>{
     console.log("connected BookingsAPI");
 }).catch(err => {
-    console.log(errMessage);
     console.log(err);
 });
 

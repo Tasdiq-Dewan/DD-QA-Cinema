@@ -12,20 +12,20 @@ function Footer(){
                 <div className='footer-link-wrapper'>
                     <div class='footer-link-items'>
                         <h2>
-                            <Link to='/homepage'>Home</Link>
+                            <Link to='/'>Home</Link>
                         </h2>
                     </div>
                     <div class='footer-link-items'>
                         <h2>About</h2>
-                        <Link to='/sign-up'>Who we Are</Link>
-                        <Link to='/sign-up'>Opening times</Link>
-                        <Link to='/sign-up'>Location</Link>
-                        <Link to='/sign-up'>Film classifications</Link>
+                        <Link to='/about'>Who we Are</Link>
+                        <Link to='/location'>Opening times</Link>
+                        <Link to='/location'>Location</Link>
+                        <Link to='/classification'>Film classifications</Link>
                     </div>
 
                     <div class='footer-link-items'>
                         <h2>Contact Us</h2>
-                        <Link to='/'>Email</Link>
+                        <Link to='/Contact'>Email</Link>
                     </div>
 
                 </div>

@@ -1,0 +1,18 @@
+.rating{
+    width: 10%;
+    height:10%;
+    display:block;
+    margin-left: 40%;
+    margin-right:50%;
+}
+
+.classifications p{
+    color: white;
+    justify-content: center;
+    margin-left:10%;
+    margin-right:10%;
+}
+
+h3{
+    color:white;
+}

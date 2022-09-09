@@ -1,0 +1,55 @@
+.map{
+     margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1%;
+    box-sizing: border-box;
+    border-style: solid;
+    border-color: green;
+    border-width: 1ex;
+
+}
+
+.text2{
+    font-size: 16px;     
+    text-align: center;
+    color: white;
+    background-color: #242424;
+  }
+
+.text{
+    font-size: 18px;     
+    font-weight: bold;   
+    text-align: center;
+    color: white;
+    background-color: #242424;
+  }
+
+ .background{
+    background-color: #242424;
+  }
+
+  @keyframes cf3FadeInOut {
+    0% {
+    opacity:1;
+  }
+  45% {
+  opacity:1;
+  }
+  55% {
+  opacity:0;
+  }
+  100% {
+  opacity:0;
+  }
+  }
+ 
+ .imgs {
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 10s;
+  animation-direction: alternate;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+  height: 10%;
+  }

@@ -1,0 +1,31 @@
+
+.d-block{
+    height: 600px;
+    width: 100%;
+
+}
+
+
+.booking-btn {
+    background-color: #242424; /* Green */
+    border: none;
+    color: white;
+    padding: 12px 36px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 32px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 12px;
+    width: 40%;
+    top: 50%;
+    left: 30%;
+  }
+
+  .booking-btn:hover {
+    color: #30d456;;
+    
+  }
+
