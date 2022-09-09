@@ -51,3 +51,11 @@ This is the Navigation Bar.
 * The "Discussions" button will directo users to the Discussions page where they can make their own posts as well as read posts from other users.
 ![image](https://user-images.githubusercontent.com/37335919/189317690-6fee3555-6c97-4eee-938e-278e1d5cbce4.png)
 
+### Search Bar
+This is the Search Bar. It allows users to search for films being shown at QA Cinema. The user can enter a film name as well as keywords relating to the genre, synopsis, or classification of a film.
+![image](https://user-images.githubusercontent.com/37335919/189318787-e83211d4-12d8-4eb0-b7bd-3c35e4bf03d4.png)
+
+Example: Searching for the term "Batman" will return two films: 'The Dark Knight' and 'The Batman'
+![image](https://user-images.githubusercontent.com/37335919/189319998-fe581898-aea2-43c9-a5c0-1a41a21a172c.png)
+![image](https://user-images.githubusercontent.com/37335919/189320070-0327ed47-5525-41cd-8e6e-220827b82de8.png)
+
