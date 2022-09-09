@@ -103,3 +103,7 @@ This is the Location page, which provides information on the location and openin
 ### Classificatons
 This is the Film Classifications page which explains each film classification and also shows the icon for each one.
 ![image](https://user-images.githubusercontent.com/37335919/189326660-78811906-4fbc-4381-8f01-868331d63880.png)
+
+### Contact Us
+This is the contact page which allows the user to contact the QA Cinema team, they can enter their name, email, and the message they want to send.
+![image](https://user-images.githubusercontent.com/37335919/189327100-2f0da7c0-0675-484d-aa50-b5d55365e1c3.png)
