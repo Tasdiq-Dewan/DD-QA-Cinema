@@ -55,7 +55,10 @@ This is the Navigation Bar.
 This is the Search Bar. It allows users to search for films being shown at QA Cinema. The user can enter a film name as well as keywords relating to the genre, synopsis, or classification of a film.
 ![image](https://user-images.githubusercontent.com/37335919/189318787-e83211d4-12d8-4eb0-b7bd-3c35e4bf03d4.png)
 
-Example: Searching for the term "Batman" will return two films: 'The Dark Knight' and 'The Batman'
+Example 1: Searching for the term "Batman" will return two films: 'The Dark Knight' and 'The Batman'
 ![image](https://user-images.githubusercontent.com/37335919/189319998-fe581898-aea2-43c9-a5c0-1a41a21a172c.png)
 ![image](https://user-images.githubusercontent.com/37335919/189320070-0327ed47-5525-41cd-8e6e-220827b82de8.png)
+
+Example 2: Searching for the term "Anime" will return one film: 'Dragon Ball Super: Broly'
+![image](https://user-images.githubusercontent.com/37335919/189320269-e4151725-02ed-4500-9554-6462247d30f2.png)
 
